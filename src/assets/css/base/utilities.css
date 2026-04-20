@@ -1,0 +1,49 @@
+@utility content-empty {
+  content: '';
+}
+
+@utility font-bold {
+  font-weight: 700;
+  font-variation-settings: 'wght' 700;
+}
+
+@utility filter-blue {
+  filter: invert(73%) sepia(46%) saturate(481%) hue-rotate(129deg) brightness(87%) contrast(96%);
+}
+
+@utility filter-gray {
+  filter: invert(17%) sepia(0%) saturate(0%) hue-rotate(67deg) brightness(94%) contrast(84%);
+}
+
+@utility filter-red {
+  filter: brightness(0) saturate(100%) invert(51%) sepia(29%) saturate(1073%) hue-rotate(315deg)
+    brightness(106%) contrast(101%);
+}
+
+@utility filter-white {
+  filter: brightness(0) invert(100%);
+}
+
+@utility filter-yellow {
+  filter: invert(93%) sepia(12%) saturate(7025%) hue-rotate(327deg) brightness(112%) contrast(94%);
+}
+
+@utility flex-center-center {
+  @apply flex items-center justify-center;
+}
+
+@utility flex-center-between {
+  @apply flex items-center justify-between;
+}
+
+@utility flex-col-center {
+  @apply flex flex-col justify-center items-center;
+}
+
+@utility flex-col-start-between {
+  @apply flex flex-col items-start justify-between;
+}
+
+@utility flex-col-center-between {
+  @apply flex flex-col items-center justify-between;
+}

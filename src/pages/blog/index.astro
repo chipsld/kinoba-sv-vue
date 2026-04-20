@@ -1,0 +1,32 @@
+---
+import { getCollection } from 'astro:content';
+
+import { BlogPosts } from '@/components/blog-posts.tsx';
+import { SITE_TITLE, SITE_DESCRIPTION } from '@/consts';
+import DefaultLayout from '@/layouts/DefaultLayout.astro';
+
+const posts = (await getCollection('blog')).sort(
+	(a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf(),
+);
+
+const blogPosts = posts.map((post) => ({
+	id: post.id,
+	title: String(post.data.title ?? ''),
+	description: String(post.data.description ?? ''),
+	image: typeof post.data.image === 'string' ? post.data.image : '',
+	authorImage: typeof post.data.authorImage === 'string' ? post.data.authorImage : '',
+	authorName: typeof post.data.authorName === 'string' ? post.data.authorName : '',
+}));
+---
+
+<DefaultLayout title={SITE_TITLE} description={SITE_DESCRIPTION} >
+	<div
+		class="relative mx-2.5 mt-2.5 px-4 md:px-6 lg:mx-4 lg:px-[10%] from-100/50 via-yellow to-yellow/80 rounded-t-4xl rounded-b-2xl bg-linear-to-b via-20% bg-yellow-50"
+	>
+		<div class="py-28 lg:pt-44 lg:pb-32">
+			<BlogPosts posts={blogPosts} client:only='react' />
+		</div>
+	</div>
+</DefaultLayout>
+
+

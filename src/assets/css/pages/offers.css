@@ -1,0 +1,39 @@
+@reference '../application.css';
+
+.timeline {
+  @apply relative lg:w-2/3 bg-gray-900 py-4 px-8 md:py-8 md:px-16;
+
+  .timeline-item {
+    @apply relative mb-10;
+
+    /* Dot */
+    &::before {
+      @apply absolute block w-3 h-3 rounded-full mt-3 -start-[2.3rem] bg-blue-500 content-empty md:-start-10;
+    }
+
+    /* Line */
+    &:last-of-type .timeline-line {
+      @apply hidden;
+    }
+  }
+
+  .timeline-line {
+    @apply border border-blue-500 absolute top-5 -left-8 md:-left-[2.18rem];
+  }
+
+  .timeline-with-optional-last .timeline-item {
+    /* Dot */
+    &:last-of-type::before {
+      @apply bg-gray-900 border border-blue-500;
+    }
+
+    /* Line */
+    &:nth-last-of-type(2) .timeline-line {
+      @apply border-dashed;
+    }
+  }
+}
+
+.stack-item {
+  @apply list-disc list-item text-base font-thin text-gray-100;
+}

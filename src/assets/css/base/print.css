@@ -1,0 +1,16 @@
+/* Hide menu */
+.desktop-header {
+  display: none;
+}
+
+/* Hide decorative elements */
+svg,
+.shape {
+  display: none;
+}
+
+/* Disable animations on scroll */
+.aos-init {
+  transform: translate(0) scale(1) !important;
+  opacity: 1 !important;
+}

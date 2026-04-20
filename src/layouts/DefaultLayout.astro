@@ -1,0 +1,19 @@
+---
+import BaseHead from '@/components/BaseHead.astro';
+import Footer from '@/components/footer.vue';
+import Navbar from '@/components/navbar.vue';
+
+const { title, description } = Astro.props;
+---
+
+<html lang="en">
+    <head>
+        <BaseHead title={title} description={description}  />
+    </head>
+    <body class={`h-screen antialiased`}
+    >
+        <Navbar client:only='vue' />
+        <main><slot /></main>
+        <Footer client:only='vue' />
+    </body>
+</html>

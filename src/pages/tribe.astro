@@ -1,0 +1,109 @@
+---
+import DefaultLayout from '@/layouts/DefaultLayout.astro';
+import { TEAM } from '@/consts';
+import TeamAccordion from '@/components/TeamAccordion.astro';
+import Background from '@/components/background.vue';
+import { Image } from 'astro:assets';
+import teamImage from '@/assets/images/team/team.jpg';
+
+const tribe = 'tribe';
+
+// Translation function (adapt to your i18n system)
+const t = (key: string, params: Record<string, unknown> = {}) => {
+  // TODO: Implement your translation function
+  return key;
+};
+
+// TODO: Define FORMER_MEMBERS constant in consts.ts
+const FORMER_MEMBERS: typeof TEAM = [];
+---
+
+<DefaultLayout title="Tribe" description="Meet our team">
+    <Background className="via-muted to-muted/80">
+  <!-- Hero Banner Section -->
+  <div class="relative h-96 overflow-hidden bg-linear-to-b  flex items-center justify-center">
+    <h1 class="h1 text-white text-center">
+      La tribu Kinoba
+    </h1>
+  </div>
+
+  <!-- Intro Section -->
+  <section>
+    <div class="layout grid py-6 gap-8 lg:py-24 lg:grid-cols-2 lg:gap-20">
+      <div class="flex flex-col justify-between">
+        <p class="opacity-80 mb-12">
+          L'aventure Kinoba a commencé en 2017 avec la volonté d'accompagner des créateurs d'entreprise et de proposer des développements web de qualité.
+        </p>
+        <div class="w-full h-72">
+          <Image
+            src={teamImage}
+            alt={t('alt.team_image')}
+            class="w-full h-full object-cover"
+            width="400"
+            height="200"
+            loading="lazy"
+          />
+        </div>
+      </div>
+
+      <div class="flex flex-col gap-8 opacity-80 text-white">
+        <p>Historiquement, les ingénieurs et développeurs web à l'origine de l'agence ont été sollicités par plusieurs entrepreneurs pour créer leurs marketplaces, sites e-commerce et applications web métier. De simple agence Ruby on Rails à agence web pluridisciplinaire, nous travaillons depuis nos débuts avec des technologies de pointe adaptées à des clients faisant face à un marché en constante évolution.
+
+Nous avons dans notre ADN la création de produits web complexes qui traduisent directement le business model de nos clients. Pour maitriser ton produit, toutes nos créations sont faites en interne grâce à l'expertise de l'équipe : développement web, ux design, ui design, infrastructure serveurs, maintenance de serveurs, devOps, hébergement web et gestion de projet web.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Team Section -->
+  <section class="section-gray">
+    <div class="layout grid grid-cols-1 gap-10 lg:grid-cols-2 lg:gap-20">
+      {TEAM.map((member) => (
+        <TeamAccordion
+          member={member}
+          accordionName="member"
+          t={t}
+        />
+      ))}
+
+      <!-- Join Section -->
+      <div class="lg:col-span-2 flex items-center flex-wrap gap-4">
+        <p class="font-bold text-white">{t(`${tribe}.join`)}</p>
+        <a
+          href="/join"
+          class="text-sm opacity-80 transition-arrow flex items-center gap-2 p-2 -ml-2 text-white hover:opacity-100"
+        >
+          {t(`${tribe}.join_link`)}
+          <svg
+            class="w-4 h-4"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M9 5l7 7-7 7"
+            />
+          </svg>
+        </a>
+      </div>
+
+      <!-- Former Members Section -->
+      <div class="lg:col-span-2 overflow-hidden">
+        <h2 class="h2 text-white" data-aos="fade-up">
+          {t(`${tribe}.former.title`)}
+        </h2>
+      </div>
+
+      {FORMER_MEMBERS.length > 0 && FORMER_MEMBERS.map((member) => (
+        <TeamAccordion
+          member={member}
+          accordionName="former-member"
+          t={t}
+        />
+      ))}
+    </div>
+  </section>
+  </Background>
+</DefaultLayout>

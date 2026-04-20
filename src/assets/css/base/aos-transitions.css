@@ -1,0 +1,32 @@
+/* Overrides AOS transitions */
+[data-aos='zoom-in'] {
+  transform: scale(0.95) !important;
+}
+
+[data-aos^='zoom'][data-aos^='zoom'].aos-animate {
+  transform: translateZ(0) scale(1) !important;
+}
+
+[data-aos='fade-up'] {
+  opacity: 0 !important;
+  transform: translate3d(0, 2rem, 0) !important;
+}
+
+[data-aos='fade-left'] {
+  transform: translate3d(2rem, 0, 0) !important;
+}
+
+[data-aos^='fade'][data-aos^='fade'].aos-animate {
+  transform: translateZ(0) !important;
+  opacity: 1 !important;
+}
+
+/*  Custom AOS transitions */
+[data-aos='timeline-down'] {
+  height: 0;
+  transition-property: height;
+
+  &.aos-animate {
+    height: calc(100% + 2rem);
+  }
+}

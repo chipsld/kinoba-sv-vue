@@ -1,0 +1,76 @@
+.btn {
+  @apply font-massilia relative text-white py-3 px-6 rounded-full flex items-center gap-2 w-fit z-1 overflow-hidden outline-none focus-visible:ring-3 focus-visible:ring-gray-100 focus-visible:ring-offset-4 focus-visible:ring-offset-gray-900 focus-visible:rounded-full;
+
+  background: linear-gradient(
+      60deg,
+      theme('colors.red.700'),
+      theme('colors.yellow.500'),
+      theme('colors.blue.500')
+    )
+    100% no-repeat;
+  transition:
+    background-size 0.2s,
+    color 0.35s 0.15s;
+
+  &::before {
+    @apply content-empty absolute top-0.5 left-0.5 bg-gray-900 rounded-full -z-2;
+
+    width: calc(100% - 0.25rem);
+    height: calc(100% - 0.25rem);
+  }
+
+  &::after {
+    @apply content-empty absolute top-0 left-0 w-0 h-full bg-linear-to-r from-yellow-500 to-blue-500 transition-all duration-500 -z-1;
+  }
+
+  .icon {
+    transition: filter 0.35s 0.15s;
+  }
+
+  &.large {
+    @apply py-8 px-12;
+  }
+
+  &.gray-800 {
+    &::before {
+      @apply bg-gray-800;
+    }
+  }
+
+  &.gray-900 {
+    &::before {
+      @apply bg-gray-900;
+    }
+  }
+
+  &:not(:disabled):hover {
+    /* changing the background size helps hiding the red part of the button */
+    @apply text-gray-700 bg-size-[200%];
+
+    transition:
+      background-size 0.2s,
+      color 0.5s;
+
+    &::after {
+      @apply w-full;
+    }
+
+    .icon.filter-white {
+      @apply filter-gray;
+
+      transition: filter 0.5s;
+    }
+  }
+
+  &:disabled {
+    @apply cursor-not-allowed grayscale opacity-70;
+  }
+}
+
+.btn-dark {
+  @apply bg-gray-900 text-white p-2 rounded-md transition-all duration-300 ease-in-out hover:bg-gray-800;
+}
+
+.simple-link {
+  @apply underline underline-offset-2 hover:no-underline;
+}

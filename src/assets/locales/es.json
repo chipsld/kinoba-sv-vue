@@ -1,0 +1,169 @@
+{
+  "altTexts": {
+    "homeLink": "Ver la página de inicio de Kinoba",
+    "logo": "Logo de {projectName}",
+    "projectShow": "Ver el proyecto {name}"
+  },
+  "buttons": {
+    "nextStep": "Siguiente paso",
+    "previousStep": "Paso anterior",
+    "scrollToTop": "Subir",
+    "skip": "Ir al contenido",
+    "studyCase": "Ver el caso del cliente"
+  },
+  "contactForm": {
+    "error": {
+      "email": "Dirección de correo electrónico inválida",
+      "invalidForm": "Se ha producido un error, inténtalo de nuevo gracias",
+      "messageContent": "Para todas las solicitudes de prácticas, experiencia laboral o contratos permanentes, elige \"postular\" en la lista",
+      "messageLength": "El mensaje es demasiado largo, discutiremos los detalles juntos 😉",
+      "messageLink": "la página de contratación",
+      "phone": "Número de teléfono no válido",
+      "required": "Este campo es obligatorio",
+      "title": "¡Ups!"
+    },
+    "keywords": ["prácticas", "alternancia", "contrato indefinido", "candidatura", "contratación"],
+    "labels": {
+      "email": "Un correo electrónico para volver a contactarte",
+      "message": "Tu mensaje",
+      "name": "¿Cómo te llamas?",
+      "phone": "¿Cuál es tu número de teléfono?",
+      "subject": "¿Cuál es el motivo de tu contacto?",
+      "cv": "Tu CV"
+    },
+    "placeholders": {
+      "email": "Correo electrónico",
+      "message": "Mensaje",
+      "name": "Nombre y apellido",
+      "phone": "Su número de teléfono",
+      "cv": "Tu CV (Máximo 3mo - PDF, PNG, JPG)"
+    },
+    "subjects": {
+      "apply": "Postular",
+      "lead": "Tengo un proyecto",
+      "other": "Otro motivo",
+      "partnership": "Solicitud de colaboración"
+    },
+    "submit": "Enviar",
+    "success": {
+      "content": "Gracias por tu mensaje 🙏, nos pondremos en contacto contigo lo antes posible.",
+      "title": "¡Mensaje enviado!"
+    }
+  },
+  "formFile": {
+    "invalidSize": "Tu fichero excede el límite autorizado ({size}Mo)"
+  },
+  "cookieBanner": {
+    "accept": "Aceptar",
+    "cookieConsent": "Utilizamos cookies para mejorar la experiencia de nuestros usuarios. Los cookies son piezas de datos que se descargan o almacenan en tu ordenador u otro dispositivo. Al hacer clic en \"Aceptar\", aceptas",
+    "cookieConsentLink": " el uso de cookies.",
+    "cookieConsentShort": "Utilizamos cookies para majorar la experiencia de nuestros usuarios. Al hacer click en \"Aceptar\", aceptas",
+    "decline": "Rechazar"
+  },
+  "cookieButtons": {
+    "accept": "Aceptar",
+    "cookieAccept": "Has aceptado el uso de cookies. Si deseas cambiar-lo, haz clic en el botón siguiente:",
+    "cookieConsent": "Utilizamos cookies para mejorar la experiencia de nuestros usuarios. Los cookies son piezas de datos que se descargan o almacenan en tu ordenador u otro dispositivo. Al hacer clic en \"Aceptar\", aceptas el uso de cookies.",
+    "cookieDecline": "Has rechazado el uso de cookies. Si deseas cambiar-lo, haz clic en el botón siguiente:",
+    "decline": "Rechazar"
+  },
+  "form": {
+    "filterBy": "Filtrar por",
+    "noProjects": "Ningún proyecto coincide con estos filtros",
+    "resetFilters": "Restablecer filtros",
+    "select": {
+      "defaultOptionLabel": "Seleccionar una opción",
+      "fields": {
+        "all": "Todas las actividades",
+        "energy": "Energía",
+        "entrepreneurship": "Emprendimiento",
+        "health": "Salud",
+        "industry": "Industria",
+        "training": "Formación",
+        "label": "Área de actividad",
+        "law": "Derecho",
+        "luxury": "Lujo",
+        "property": "Inmobiliario",
+        "travel": "Viajes y Turismo"
+      },
+      "noOption": "No hay opciones disponibles",
+      "offers": {
+        "all": "Todas las ofertas",
+        "label": "Oferta",
+        "tailorMade": "Desarrollo web a medida",
+        "tailorMadeShort": "A medida",
+        "teamReinforcement": "Refuerzo de equipos técnicos",
+        "teamReinforcementShort": "Refuerzo de equipos"
+      },
+      "services": {
+        "all": "Todos los servicios",
+        "development": "Desarrollo web",
+        "infrastructureMaintenance": "Mantenimiento de infraestructura",
+        "label": "Servicios",
+        "projectManagement": "Gestión de proyectos",
+        "uiUxDesign": "Diseño de interfaz UX/UI"
+      }
+    }
+  },
+  "locales": {
+    "en": "Inglés",
+    "es": "Español",
+    "fr": "Francés"
+  },
+  "navbar": {
+    "blog": "Blog",
+    "burgerTitle": "Mostrar el menú",
+    "logoTitle": "Kinoba inicio",
+    "modalButton": "Tengo un proyecto",
+    "offer": "Oferta",
+    "tailorMade": "Desarrollo web a medida",
+    "teamReinforcement": "Refuerzo de equipos"
+  },
+  "projectTypes": {
+    "slugs": {
+      "tailorMade": "Desarrollo web a medida",
+      "teamReinforcement": "Refuerzo de equipos técnicos"
+    }
+  },
+  "services": {
+    "properties": {
+      "infrastructureMaintenance": [
+        "Implementación de servidores y gestión de tu alojamiento",
+        "Pruebas automatizadas y pipelines de despliegue",
+        "Reporte automático de errores y mantenimiento correctivo"
+      ],
+      "projectManagement": [
+        "Definición técnica previa al proyecto",
+        "Metodología flexible y validaciones sucesivas",
+        "Herramientas de seguimiento y Slack dedicado con todos nuestros clientes"
+      ],
+      "uiUxDesign": [
+        "Identité visuelle unique",
+        "Expérience utilisateur fluide",
+        "Interface utilisateur sexy"
+      ],
+      "webDevelopment": [
+        "Tecnologías de vanguardia, de código abierto y no propietarias",
+        "Código fuente probado, almacenado con un historial",
+        "Estructura escalable y modular"
+      ]
+    }
+  },
+  "testiomonialsCarousel": {
+    "techs": {
+      "commercial": {
+        "b2b": "Plataforma B2B y B2C",
+        "ecommerce": "Comercio electrónico",
+        "marketplace": "Marketplace",
+        "saas": "Plataforma SaaS",
+        "showcase": "Sitio web corporativo",
+        "webapp": "Aplicación web"
+      },
+      "offers": {
+        "tailor_made": "Desarrollo web a medida",
+        "team_reinforcement": "Refuerzo de equipos técnicos"
+      }
+    },
+    "title": "Lo que dicen los clientes"
+  }
+}

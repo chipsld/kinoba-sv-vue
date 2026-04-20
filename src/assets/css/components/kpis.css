@@ -1,0 +1,31 @@
+@reference '../application.css';
+
+.kpi-item {
+  @apply py-1 lg:px-10 text-center border-gray-200;
+
+  &:nth-child(odd) {
+    @apply border-r pr-6 lg:pr-10;
+  }
+
+  &:nth-child(even) {
+    @apply pl-6 lg:pl-10;
+  }
+
+  @media (width >= 1024px) {
+    &:not(:last-child) {
+      @apply border-r border-t-0;
+    }
+  }
+}
+
+.kpi-number {
+  @apply text-5xl font-massilia font-bold mb-1;
+}
+
+.kpi-unit {
+  @apply text-3xl;
+}
+
+.kpi-description {
+  @apply text-sm text-gray-100;
+}

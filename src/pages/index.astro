@@ -1,11 +1,21 @@
 ---
-import Welcome from '../components/Welcome.astro';
-import Layout from '../layouts/Layout.astro';
+import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
 
-// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
-// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
+import Background from '../components/background.vue';
+import Hero from '../components/hero.vue';
+import Services from '../components/services.astro';
+import Offers from '../components/offers.astro';
+// import Logos from '../components/Logos.astro';
+import Kpis from '../components/kpis.astro';
+import DefaultLayout from '../layouts/DefaultLayout.astro';
 ---
 
-<Layout>
-	<Welcome />
-</Layout>
+<DefaultLayout title={SITE_TITLE} description={SITE_DESCRIPTION} >
+  <Background className="via-muted to-muted/80">
+    <Hero />
+    <Services />
+    <Offers />
+    <Kpis />
+    {/* <Logos /> */}
+  </Background>
+</DefaultLayout>

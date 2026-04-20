@@ -1,0 +1,35 @@
+@reference '../application.css';
+
+.project-hero {
+  @apply relative md:h-screen grid;
+
+  grid-template-rows: minmax(20rem, 1fr) auto;
+
+  .project-hero-img {
+    @apply bg-gray-900 relative;
+
+    &::after {
+      @apply content-empty absolute top-0 left-0 w-full h-full bg-linear-to-b from-gray-900 to-transparent;
+    }
+  }
+
+  .project-hero-info {
+    @apply p-6 md:p-8 border-t md:border-t-0;
+
+    dt {
+      @apply font-bold;
+    }
+
+    dd {
+      @apply text-gray-100 lg:text-xl;
+    }
+  }
+}
+
+.project-figure {
+  @apply order-2 md:order-none;
+}
+
+.project-figcaption {
+  @apply mt-6 text-gray-100;
+}

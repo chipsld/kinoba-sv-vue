@@ -1,0 +1,60 @@
+@reference '../application.css';
+
+.not-found {
+  .not-found-container {
+    @apply bg-linear-to-b from-gray-900 to-gray-700 flex flex-col items-center justify-center gap-16 relative h-screen;
+
+    &::after {
+      @apply content-[''] absolute bottom-0 left-20 bg-no-repeat bg-contain bg-bottom h-[50vh] w-1/5 hidden sm:block;
+
+      background-image: url('/assets/images/background/page-404-group.svg');
+    }
+  }
+
+  .not-found-code {
+    @apply font-massilia tracking-widest font-bold;
+  }
+
+  .code {
+    @apply inline-block relative text-[10rem] md:text-[15rem];
+
+    animation: wave 4s ease infinite;
+
+    &:nth-child(1) {
+      background: linear-gradient(
+        93deg,
+        theme('colors.red.700') -11.79%,
+        theme('colors.yellow.500') 96.98%
+      );
+      background-size: 100% auto;
+      background-clip: text;
+      -webkit-text-fill-color: transparent;
+      animation-delay: 100ms;
+    }
+
+    &:nth-child(2) {
+      background: linear-gradient(
+        93deg,
+        theme('colors.yellow.500') -11.79%,
+        theme('colors.blue.400') 96.98%
+      );
+      background-size: 100% auto;
+      background-clip: text;
+      -webkit-text-fill-color: transparent;
+      animation-delay: 200ms;
+    }
+
+    &:nth-child(3) {
+      background: linear-gradient(
+        93deg,
+        theme('colors.blue.300') -11.79%,
+        theme('colors.blue.400') 42.05%,
+        theme('colors.blue.500') 96.98%
+      );
+      background-size: 100% auto;
+      background-clip: text;
+      -webkit-text-fill-color: transparent;
+      animation-delay: 300ms;
+    }
+  }
+}

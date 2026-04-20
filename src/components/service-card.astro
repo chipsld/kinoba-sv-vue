@@ -1,0 +1,7 @@
+<div class="flex flex-col md:flex-row gap-5 p-6 md:pr-16 md:pl-5 md:py-10 bg-gray-900" data-aos="fade-up" data-aos-delay="{{ animationDelay }}">
+    <icon name="{{ icon }}" class="lg:mt-1" size="xl" filter="blue"></icon>
+    <div class="flex flex-col gap-3">
+        <h3 class="h3">{{ title|trans }}</h3>
+        <p class="text-gray-100">{{ content|trans|sanitize_html }}</p>
+    </div>
+</div>

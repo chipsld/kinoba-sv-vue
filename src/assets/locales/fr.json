@@ -1,0 +1,169 @@
+{
+  "altTexts": {
+    "homeLink": "Voir la page d'accueil de Kinoba",
+    "logo": "Logo de {projectName}",
+    "projectShow": "Voir le projet {name}"
+  },
+  "buttons": {
+    "nextStep": "Étape suivante",
+    "previousStep": "Étape précédente",
+    "scrollToTop": "Remonter",
+    "skip": "Aller au contenu",
+    "studyCase": "Voir le cas client"
+  },
+  "contactForm": {
+    "errors": {
+      "email": "Adresse email invalide",
+      "invalidForm": "Une erreur s'est produite, merci de réessayer",
+      "messageContent": "Pour toute demande de stage, alternance ou CDI, choisis \"postuler\" dans la liste",
+      "messageLength": "Le message est trop long, nous discuterons des détails ensembles 😉",
+      "messageLink": "la page de recrutement",
+      "phone": "Numéro de téléphone invalide",
+      "required": "Ce champ est requis",
+      "title": "Oups !"
+    },
+    "keywords": ["stage", "alternance", "CDI", "recrutement", "candidature"],
+    "labels": {
+      "email": "Un email pour te recontacter",
+      "message": "Ton mot doux",
+      "name": "Comment t'appelles-tu ?",
+      "phone": "Quel est ton 06 ?",
+      "subject": "La raison de ta prise de contact ?",
+      "cv": "Ton CV"
+    },
+    "placeholders": {
+      "email": "Ton email",
+      "message": "Quelque chose à nous dire ?",
+      "name": "Ton nom et prénom",
+      "phone": "Ton numéro de téléphone",
+      "cv": "Ton CV (Max 3mo - PDF, PNG, JPG)"
+    },
+    "subjects": {
+      "apply": "Postuler",
+      "lead": "J'ai un projet",
+      "other": "Autre",
+      "partnership": "Demande de partenariat"
+    },
+    "submit": "Envoyer",
+    "success": {
+      "content": "Merci pour ton message 🙏, nous reviendrons vers toi le plus rapidement possible.",
+      "title": "C'est dans les tuyaux !"
+    }
+  },
+  "formFile": {
+    "invalidSize": "Ton fichier dépasse la limite autorisée ({size}Mo)"
+  },
+  "cookieBanner": {
+    "accept": "Accepter",
+    "cookieConsent": "Nous utilisons les cookies afin d'améliorer l'expérience de nos utilisateurs. Les cookies sont des données qui sont téléchargées ou stockées sur ton ordinateur ou sur tout autre appareil. En cliquant sur \"Accepter\", tu acceptes notre",
+    "cookieConsentLink": "politique sur les cookies.",
+    "cookieConsentShort": "Nous utilisons les cookies afin d'améliorer l'expérience de nos utilisateurs. En cliquant sur \"Accepter\", tu acceptes notre",
+    "decline": "Refuser"
+  },
+  "cookieButtons": {
+    "accept": "Accepter",
+    "cookieAccept": "Tu as accepté l'utilisation des cookies. Si tu souhaites changer ton choix clique sur le bouton ci-dessous:",
+    "cookieConsent": "Nous utilisons les cookies afin d'améliorer l'expérience de nos utilisateurs. Les cookies sont des données qui sont téléchargées ou stockées sur ton ordinateur ou sur tout autre appareil. En cliquant sur \"Accepter\", tu acceptes notre politique sur les cookies et traçeurs.",
+    "cookieDecline": "Tu as refusé l'utilisation des cookies. Si tu souhaites changer ton choix clique sur le bouton ci-dessous:",
+    "decline": "Refuser"
+  },
+  "form": {
+    "filterBy": "Filtrer par",
+    "noProjects": "Aucun project ne correspond à ces filtres",
+    "resetFilters": "Réinitialiser les filtres",
+    "select": {
+      "defaultOptionLabel": "Sélectionner une option",
+      "fields": {
+        "all": "Tous les domaines",
+        "energy": "Énergie",
+        "entrepreneurship": "Entrepreneuriat",
+        "health": "Santé",
+        "industry": "Industrie",
+        "training": "Formation",
+        "label": "Domaine d'activité",
+        "law": "Droit",
+        "luxury": "Luxe",
+        "property": "Immobilier",
+        "travel": "Voyage & Tourisme"
+      },
+      "noOption": "Aucune option disponible",
+      "offers": {
+        "all": "Toutes les offres",
+        "label": "Offre",
+        "tailorMade": "Développement web sur mesure",
+        "tailorMadeShort": "Sur mesure",
+        "teamReinforcement": "Renfort d'équipes techniques",
+        "teamReinforcementShort": "Renfort d'équipes"
+      },
+      "services": {
+        "all": "Tous les services",
+        "development": "Développement web",
+        "infrastructureMaintenance": "Maintenance d'infrastructure",
+        "label": "Service",
+        "projectManagement": "Gestion de projet",
+        "uiUxDesign": "UI/UX Design"
+      }
+    }
+  },
+  "locales": {
+    "en": "Anglais",
+    "es": "Espagnol",
+    "fr": "Français"
+  },
+  "navbar": {
+    "blog": "Blog",
+    "burgerTitle": "Afficher le menu",
+    "logoTitle": "Accueil Kinoba",
+    "modalButton": "J'ai un projet",
+    "offer": "Offre",
+    "tailorMade": "Développement web sur mesure",
+    "teamReinforcement": "Renfort d'équipes techniques"
+  },
+  "projectTypes": {
+    "slugs": {
+      "tailorMade": "Développement web sur mesure",
+      "teamReinforcement": "Renfort équipes techniques"
+    }
+  },
+  "services": {
+    "properties": {
+      "infrastructureMaintenance": [
+        "Mise en place de serveurs et gestion de ton hébergement",
+        "Tests automatisés et pipelines de déploiement",
+        "Reporting automatique de bugs et maintenance corrective"
+      ],
+      "projectManagement": [
+        "Cadrage technique en amont du projet",
+        "Méthodologie flexible et validations successives",
+        "Outils de suivi et Slack dédié avec tous nos clients"
+      ],
+      "uiUxDesign": [
+        "Identité visuelle unique",
+        "Expérience utilisateur fluide",
+        "Interface utilisateur sexy"
+      ],
+      "webDevelopment": [
+        "Technologies de pointe, open source et non propriétaires",
+        "Code source testé, stocké avec un historique",
+        "Structure scalable et modulable"
+      ]
+    }
+  },
+  "testiomonialsCarousel": {
+    "techs": {
+      "commercial": {
+        "b2b": "Plateforme B2B & B2C",
+        "ecommerce": "E-commerce",
+        "marketplace": "Marketplace",
+        "saas": "Plateforme SaaS",
+        "showcase": "Site vitrine",
+        "webapp": "Application web"
+      },
+      "offers": {
+        "tailor_made": "Développement web sur mesure",
+        "team_reinforcement": "Renfort d'équipes techniques"
+      }
+    },
+    "title": "Ce qu'en disent les clients"
+  }
+}

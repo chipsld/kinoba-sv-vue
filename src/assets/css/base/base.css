@@ -1,0 +1,37 @@
+@layer base {
+  body {
+    @apply font-rethink scroll-smooth scroll-pt-header;
+  }
+
+  li {
+    @apply list-none;
+  }
+
+  a:focus-visible {
+    @apply outline-none ring-3 ring-gray-100 rounded-lg;
+  }
+
+  .link:not(:focus-visible) {
+    @apply relative;
+
+    &::after {
+      @apply content-empty absolute -bottom-2 left-0 w-0 h-0.5 bg-white transition-all duration-300;
+    }
+
+    &:hover::after {
+      @apply bg-white w-full;
+    }
+  }
+
+  .layout {
+    @apply mx-auto w-main;
+  }
+
+  .section-gray {
+    @apply bg-gray-900 py-16 lg:py-24 overflow-hidden relative;
+  }
+
+  .cols-2 {
+    @apply grid md:grid-cols-2 gap-y-12 gap-x-6 lg:gap-x-20;
+  }
+}

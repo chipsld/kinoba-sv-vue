@@ -1,0 +1,110 @@
+---
+// filepath: /Users/etienne/Projects/kinoba-sv-vue/src/components/kpis.astro
+import { KPIS } from '../consts'; // ajuster le chemin si nécessaire
+
+const defaultDomain = 'home';
+---
+
+<section class="layout py-9 lg:py-16 grid grid-cols-2 lg:grid-cols-4 gap-y-6" data-kpis-section>
+  <div class="kpi-item" data-kpi-item style="opacity: 0; transform: translateY(14px);">
+    <p class="kpi-number">
+      {KPIS.clients}
+      <span class="kpi-unit">+</span>
+    </p>
+
+    <p class="kpi-description">Clients satisfaits depuis 2017</p>
+  </div>
+
+  <div class="kpi-item" data-kpi-item style="opacity: 0; transform: translateY(14px);">
+    <p class="kpi-number">
+      {KPIS.team_support_max_length}
+      <span class="kpi-unit"></span>
+    </p>
+
+    <p class="kpi-description">Durée de notre plus long renfort d'équipe</p>
+  </div>
+
+  <div class="kpi-item" data-kpi-item style="opacity: 0; transform: translateY(14px);">
+    <p class="kpi-number">
+      {KPIS.tailor_made_projects}
+      <span class="kpi-unit">+</span>
+    </p>
+
+    <p class="kpi-description">Projets web et sites internet créés sur mesure</p>
+  </div>
+
+  <div class="kpi-item" data-kpi-item style="opacity: 0; transform: translateY(14px);">
+    <p class="kpi-number">
+      {KPIS.yearly_visitors}
+      <span class="kpi-unit">+</span>
+    </p>
+
+    <p class="kpi-description">Fréquentation annuelle de nos plateformes web</p>
+  </div>
+</section>
+
+<style lang="postcss">
+  @reference '../assets/css/application.css';
+
+  .kpi-item {
+    @apply py-1 lg:px-10 text-center border-gray-200;
+
+    &:nth-child(odd) {
+      @apply border-r pr-6 lg:pr-10;
+    }
+
+    &:nth-child(even) {
+      @apply pl-6 lg:pl-10;
+    }
+
+    @media (width >= 1024px) {
+      &:not(:last-child) {
+        @apply border-r border-t-0;
+      }
+    }
+  }
+
+  .kpi-number {
+    @apply text-5xl font-massilia font-bold mb-1;
+  }
+
+  .kpi-unit {
+    @apply text-3xl;
+  }
+
+  .kpi-description {
+    @apply text-sm ;
+  }
+</style>
+
+<script>
+  import { animate } from 'motion-v';
+
+  const section = document.querySelector('[data-kpis-section]');
+  const items = section ? Array.from(section.querySelectorAll('[data-kpi-item]')) : [];
+
+  if (section && items.length > 0) {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        const [entry] = entries;
+
+        if (!entry?.isIntersecting) return;
+
+        animate(
+          items,
+          { opacity: [0, 1], y: [14, 0] },
+          {
+            duration: 0.5,
+            delay: (index) => index * 0.06,
+            ease: [0.22, 1, 0.36, 1],
+          },
+        );
+
+        observer.disconnect();
+      },
+      { threshold: 0.25 },
+    );
+
+    observer.observe(section);
+  }
+</script>

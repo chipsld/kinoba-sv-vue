@@ -1,0 +1,15 @@
+:nth-child(1 of .offer-description) {
+  @apply md:order-1;
+}
+
+:nth-child(2 of .offer-description) {
+  @apply md:order-2;
+}
+
+:nth-child(1 of .offer-image-container) {
+  @apply md:order-3;
+}
+
+:nth-child(2 of .offer-image-container) {
+  @apply pb-0 md:order-4;
+}

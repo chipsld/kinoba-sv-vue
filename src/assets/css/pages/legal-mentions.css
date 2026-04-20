@@ -1,0 +1,13 @@
+@reference '../application.css';
+
+.legal-mentions {
+  @apply text-gray-100;
+
+  .h3 {
+    @apply mt-12 mb-4 text-white;
+  }
+
+  .simple-link {
+    @apply text-white;
+  }
+}

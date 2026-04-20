@@ -1,0 +1,67 @@
+.hero-banner {
+  @apply bg-yellow-50 flex-col-center overflow-hidden relative;
+
+  &.simple {
+    @apply py-32 md:py-52;
+  }
+
+  &.extended .shape {
+    &.red {
+      top: initial;
+
+      @apply -bottom-56 lg:-bottom-96;
+    }
+
+    &.yellow {
+      @apply top-[25rem];
+    }
+  }
+
+  &.home {
+    @apply md:min-h-screen md:py-12 lg:pt-28;
+
+    .hero-banner-container {
+      @apply h-screen md:h-auto;
+    }
+
+    .shape.red {
+      @apply top-[80vh] md:top-[50vh];
+    }
+  }
+
+  .hero-banner-container {
+    @apply flex-col-center xl:items-start relative;
+  }
+
+  .hero-banner-title {
+    @apply h1 text-center xl:text-left max-w-[40rem] relative z-10;
+
+    .yellow {
+      @apply text-yellow-500;
+    }
+
+    .blue {
+      @apply text-blue-500;
+    }
+
+    .red {
+      @apply text-red-500;
+    }
+  }
+
+  .shape {
+    @apply opacity-50 absolute;
+
+    &.red {
+      @apply top-32 md:top-48 left-0 xl:left-auto xl:right-1/2 max-w-[40%];
+    }
+
+    &.yellow {
+      @apply hidden md:block top-[20%] md:top-1/2 -right-4 -translate-y-3/4 max-w-[40%];
+    }
+
+    &.blue {
+      @apply top-0 left-2 lg:left-14 -translate-y-1/2;
+    }
+  }
+}

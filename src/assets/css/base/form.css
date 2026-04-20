@@ -1,0 +1,9 @@
+@layer components {
+  .input {
+    @apply bg-gray-900 p-3 border border-gray-100 rounded-lg w-full text-white outline-none focus-visible:ring-3 focus-visible:ring-gray-100;
+
+    &.invalid {
+      @apply border-red-700;
+    }
+  }
+}

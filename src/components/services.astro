@@ -1,0 +1,57 @@
+---
+import { SERVICES_ITEMS } from '../consts';
+---
+
+<section class="section-gray" data-services-section>
+  <div class="grid gap-4 grid-cols-2">
+    {SERVICES_ITEMS.map((service) => (
+      <article
+        class="rounded-xl border border-black/10 bg-white/70 p-6 md:p-8"
+        data-service-card
+        style="opacity: 0; transform: translateY(18px);"
+      >
+        <p class="text-muted-foreground mb-2 text-xs uppercase tracking-wide">{service.icon}</p>
+        <h3 class="h3 text-black mb-3">{service.title}</h3>
+        <p class="text-black/80">{service.description}</p>
+      </article>
+    ))}
+  </div>
+</section>
+
+<script>
+  import { animate } from 'motion-v';
+
+  const section = document.querySelector('[data-services-section]');
+  const cards = section ? Array.from(section.querySelectorAll('[data-service-card]')) : [];
+
+  if (section && cards.length > 0) {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        const [entry] = entries;
+
+        if (!entry) return;
+
+        if (entry.isIntersecting) {
+          animate(
+            cards,
+            { opacity: [0, 1], y: [18, 0] },
+            {
+              duration: 3,
+              delay: (index) => index * 0.08,
+              ease: [0.22, 1, 0.36, 1],
+            },
+          );
+          return;
+        }
+
+        cards.forEach((card) => {
+          card.style.opacity = '0';
+          card.style.transform = 'translateY(18px)';
+        });
+      },
+      { threshold: 0.2 },
+    );
+
+    observer.observe(section);
+  }
+</script>

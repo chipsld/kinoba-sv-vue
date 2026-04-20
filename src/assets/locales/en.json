@@ -1,0 +1,165 @@
+{
+  "altTexts": {
+    "homeLink": "Go to Kinoba's homepage",
+    "logo": "Logo of {projectName}",
+    "projectShow": "View the {name} project"
+  },
+  "buttons": {
+    "nextStep": "Next step",
+    "previousStep": "Previous step",
+    "scrollToTop": "Go back to the top",
+    "skip": "Skip to content",
+    "studyCase": "Read the study case"
+  },
+  "contactForm": {
+    "errors": {
+      "invalidForm": "Something went wrong, try again",
+      "mail": "Invalid email address",
+      "messageContent": "To apply for an internship or full-time contract, select \"Apply\" in the list above",
+      "messageLength": "Your message is too long, we will discuss details together 😉",
+      "messageLink": "the recruitment page",
+      "phone": "Invalid phone number",
+      "required": "This field is required",
+      "title": "Oops !"
+    },
+    "keywords": ["internship", "block release training", "permanent contract", "recrutment"],
+    "labels": {
+      "email": "An email address to get back to you",
+      "message": "Your sweet words",
+      "name": "What's your name?",
+      "phone": "What's your phone number?",
+      "subject": "What is your request?",
+      "cv": "Your CV"
+    },
+    "placeholders": {
+      "email": "Email",
+      "message": "Message",
+      "name": "Firstname and lastname",
+      "phone": "Phone number",
+      "cv": "Your CV (Max 3mo - PDF, PNG, JPG)"
+    },
+    "subjects": {
+      "apply": "Apply",
+      "lead": "I have a project idea",
+      "other": "Other",
+      "partnership": "Request for partnership"
+    },
+    "submit": "Send",
+    "success": {
+      "content": "Thank you for you message 🙏, we will get back to you as soon as possible.",
+      "title": "Got it!"
+    }
+  },
+  "formFile": {
+    "invalidSize": "Your file exceeds the authorized limit ({size}Mo)"
+  },
+  "cookieBanner": {
+    "accept": "Accept",
+    "cookieConsent": "We use cookies to enhance our users experience. Cookies are data that are downloaded or stored on your computer or other device. By clicking \"Accept\", you agree to the",
+    "cookieConsentLink": " use of cookies.",
+    "cookieConsentShort": "We use cookies to enhance our users experience. By clicking \"Accept\", you agree to the",
+    "decline": "Decline"
+  },
+  "cookieButtons": {
+    "accept": "Accept",
+    "cookieAccept": "You have accepted the use of cookies. If you wish to change your choice click on the button below:",
+    "cookieConsent": "We use cookies to enhance our users experience. Cookies are data that are downloaded or stored on your computer or other device. By clicking \"Accept\", you agree to the use of cookies.",
+    "cookieDecline": "You have refused the use of cookies. If you wish to change your choice click on the button below:",
+    "decline": "Decline"
+  },
+  "form": {
+    "filterBy": "Filter by",
+    "noProjects": "No project match these filters",
+    "resetFilters": "Reset filters",
+    "select": {
+      "defaultOptionLabel": "Select an option",
+      "fields": {
+        "all": "All fields",
+        "energy": "Energy",
+        "entrepreneurship": "Entrepreneurship",
+        "health": "Health",
+        "industry": "Industry",
+        "training": "Training",
+        "label": "Business area",
+        "law": "Law",
+        "luxury": "Luxury",
+        "property": "Real estate",
+        "travel": "Travel & tourism"
+      },
+      "noOption": "No option available",
+      "offers": {
+        "all": "All offers",
+        "label": "Offer",
+        "tailorMade": "Tailor-made web development",
+        "tailorMadeShort": "Tailor-made",
+        "teamReinforcement": "Team reinforcement",
+        "teamReinforcementShort": "Reinforcement"
+      },
+      "services": {
+        "all": "All services",
+        "development": "Web development",
+        "infrastructureMaintenance": "Infrastructure maintenance",
+        "label": "Service",
+        "projectManagement": "Project management",
+        "uiUxDesign": "UI/UX Design"
+      }
+    }
+  },
+  "locales": {
+    "en": "English",
+    "es": "Spanish",
+    "fr": "French"
+  },
+  "navbar": {
+    "blog": "Blog",
+    "burgerTitle": "Display the menu",
+    "logoTitle": "Kinoba homepage",
+    "modalButton": "I have an idea",
+    "offer": "Offer",
+    "tailorMade": "Tailor-made web development",
+    "teamReinforcement": "Team reinforcement"
+  },
+  "projectTypes": {
+    "slugs": {
+      "tailorMade": "Tailor-made web development",
+      "teamReinforcement": "Technical team reinforcement"
+    }
+  },
+  "services": {
+    "properties": {
+      "infrastructureMaintenance": [
+        "Server setup and hosting management",
+        "Automated testing and deployment pipelines",
+        "Automatic bug reporting and corrective maintenance"
+      ],
+      "projectManagement": [
+        "Technical framing ahead of the project",
+        "Flexible methodology and successive validations",
+        "Tracking tools and dedicated Slack with all our customers"
+      ],
+      "uiUxDesign": ["Unique branding", "Smooth user experience", "Sexy user interface"],
+      "webDevelopment": [
+        "Cutting-edge, open source, non-proprietary technologies",
+        "Tested code, versioned and stored with git",
+        "Scalable and modular structure"
+      ]
+    }
+  },
+  "testiomonialsCarousel": {
+    "techs": {
+      "commercial": {
+        "b2b": "B2B & B2C platforms",
+        "ecommerce": "E-shop",
+        "marketplace": "Marketplace",
+        "saas": "SaaS platform",
+        "showcase": "Company website",
+        "webapp": "Web application"
+      },
+      "offers": {
+        "tailor_made": "Tailor-made web development",
+        "team_reinforcement": "Technical team reinforcement"
+      }
+    },
+    "title": "What our clients say"
+  }
+}

@@ -1,0 +1,43 @@
+@font-face {
+  font-family: Massilia;
+  src:
+    url('/assets/fonts/massilia/Massilia-Regular.woff2') format('woff2'),
+    url('fonts/massilia/Massilia-Regular.woff') format('woff');
+  font-weight: 400;
+  font-style: normal;
+  font-display: auto;
+}
+
+@font-face {
+  font-family: Massilia;
+  src:
+    url('/assets/fonts/massilia/Massilia-Bold.woff2') format('woff2'),
+    url('/assets/fonts/massilia/Massilia-Bold.woff') format('woff');
+  font-weight: 700;
+  font-style: normal;
+  font-display: auto;
+}
+
+@font-face {
+  font-family: Rethink;
+  src: url('/assets/fonts/rethink-sans/Rethink-Sans.ttf') format('truetype-variations');
+  font-stretch: 100%;
+  font-weight: 100 900;
+  font-style: normal;
+}
+
+@utility h1 {
+  @apply text-5xl lg:text-8xl font-massilia font-normal leading-none;
+}
+
+@utility h2 {
+  @apply text-3xl leading-10 font-massilia font-normal pb-1 lg:leading-[2.875rem] lg:text-4xl;
+}
+
+@utility h3 {
+  @apply text-2xl font-massilia font-normal leading-8;
+}
+
+strong {
+  @apply font-bold;
+}

@@ -1,0 +1,92 @@
+---
+import { Image } from 'astro:assets';
+import type { ImageMetadata } from 'astro';
+
+interface TeamMember {
+  name: string;
+  key: string;
+  emoji: string;
+  linkedin: string;
+  job?: string;
+  text?: string;
+  title?: string;
+  totem?: string;
+}
+
+interface Props {
+  member: TeamMember;
+  accordionName: string;
+  t: (key: string, params?: Record<string, unknown>) => string;
+}
+
+const { member, accordionName, t } = Astro.props;
+
+const images = import.meta.glob<{ default: ImageMetadata }>(
+  '/src/assets/images/team/*.webp'
+);
+const imagePath = `/src/assets/images/team/${member.key}.webp`;
+const imageModule = images[imagePath];
+const resolvedImage = imageModule ? (await imageModule()).default : null;
+---
+
+<div data-aos="zoom-in">
+  <details class="bg-white/70 border border-black/10 rounded-lg p-4" name={accordionName}>
+    <summary class="list-none cursor-pointer flex items-center justify-between gap-4">
+      <div class="flex items-center gap-4">
+        <div class="shrink-0 w-28 h-32 md:w-32 md:h-36">
+          {resolvedImage ? (
+            <Image
+              class="w-full h-full object-cover"
+              src={resolvedImage}
+              alt={`Portrait de ${member.name}`}
+              width="128"
+              height="144"
+              loading="lazy"
+            />
+          ) : (
+            <div class="w-full h-full bg-gray-200 flex items-center justify-center text-gray-400 text-sm">
+              {member.name[0]}
+            </div>
+          )}
+        </div>
+
+        <div class="text-left">
+          <span class="h3 text-black block">{member.name}</span>
+          <p class="font-bold hidden md:block text-black">{member.title ?? t(`team.${member.key}.title`)}</p>
+          <p class="text-sm opacity-80 line-clamp-2 text-black">{member.job ?? t(`team.${member.key}.job`)}</p>
+        </div>
+      </div>
+      <div class="accordion-emoji text-2xl">{member.emoji}</div>
+    </summary>
+
+    <div class="pt-4 mt-4 border-t border-black/10">
+      <div class="mb-4 opacity-80 font-bold xs:hidden text-black">{member.job ?? t(`team.${member.key}.job`)}</div>
+
+      <p class="mb-4 opacity-80 text-black whitespace-pre-wrap">{member.text ?? t(`team.${member.key}.text`)}</p>
+
+      <p class="mb-4 opacity-80 text-black">{member.totem ?? t(`team.${member.key}.totem`)}</p>
+
+      <a
+        href={member.linkedin}
+        target="_blank"
+        rel="noopener noreferrer"
+        class="flex items-center gap-2 text-sm transition-opacity transition-arrow w-fit p-2 -ml-2 text-black hover:opacity-100"
+      >
+        {`${member.name} sur LinkedIn`}
+        <svg
+          class="w-4 h-4"
+          fill="none"
+          stroke="currentColor"
+          viewBox="0 0 24 24"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            d="M9 5l7 7-7 7"
+          />
+        </svg>
+      </a>
+    </div>
+  </details>
+</div>
