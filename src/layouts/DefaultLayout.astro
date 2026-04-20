@@ -2,6 +2,7 @@
 import BaseHead from '@/components/BaseHead.astro';
 import Footer from '@/components/footer.vue';
 import Navbar from '@/components/navbar.vue';
+import SpeedInsights from '@vercel/speed-insights/astro';
 
 const { title, description } = Astro.props;
 ---
@@ -9,6 +10,7 @@ const { title, description } = Astro.props;
 <html lang="en">
     <head>
         <BaseHead title={title} description={description}  />
+        <SpeedInsights />
     </head>
     <body class={`h-screen antialiased`}
     >
