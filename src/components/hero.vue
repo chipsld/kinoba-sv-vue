@@ -95,17 +95,18 @@ import redCircleHalfCircle from "../assets/images/background/red-circle-half-cir
     </div>
 
     <div class="container m-8 mt-0">
-      <div class="rounded-xl border bg-yellow p-6 md:p-8">
+      <div class="rounded-xl border-l-4 border-l-yellow-500 border border-yellow-200 bg-yellow-50 p-6 md:p-8">
         <p class="text-base leading-relaxed md:text-lg">
           Kinoba est une agence de développement web à Lyon et Paris, constituée
-          d’une tribu experte et passionnée par la création sur mesure de
-          plateformes web et du renfort d’équipes techniques, qui est là pour
+          d'une tribu experte et passionnée par la création sur mesure de
+          plateformes web et du renfort d'équipes techniques, qui est là pour
           répondre à tous tes besoins numériques. Que tu sois un entrepreneur,
           une start-up, une PME ou un grand groupe, ton projet web est unique et
           nous avons à cœur de devenir ton partenaire de confiance pour
-          t’accompagner vers le succès.
+          t'accompagner vers le succès.
         </p>
       </div>
+    </div>
     </div>
   </section>
 </template>

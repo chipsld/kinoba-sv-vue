@@ -101,14 +101,14 @@ const types = ['Tous', 'Sur mesure', 'Renfort équipe'];
         <!-- Projects grid -->
         <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
           {projects.map((project) => (
-            <article class="group flex flex-col bg-gray-50 border border-gray-200 rounded-xl overflow-hidden hover:border-black transition-colors">
-              <div class="bg-gray-200 h-44 flex items-center justify-center">
-                <span class="text-5xl font-mono font-bold text-gray-400">{project.name[0]}</span>
+            <article class={`group flex flex-col bg-gray-50 border-l-4 border border-gray-200 rounded-xl overflow-hidden hover:shadow-md transition-shadow ${project.type === 'tailor-made' ? 'border-l-yellow-500' : 'border-l-blue-500'}`}>
+              <div class={`h-44 flex items-center justify-center ${project.type === 'tailor-made' ? 'bg-yellow-500/10' : 'bg-blue-500/10'}`}>
+                <span class={`text-5xl font-mono font-bold ${project.type === 'tailor-made' ? 'text-yellow-400' : 'text-blue-400'}`}>{project.name[0]}</span>
               </div>
-              <div class="p-6 flex flex-col gap-3 flex-1">
+              <div class="p-6 flex flex-col gap-3 flex-1 bg-white">
                 <div class="flex items-center justify-between">
                   <span class="text-xs font-medium uppercase tracking-wide text-gray-500">{project.sector}</span>
-                  <span class={`inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium ${project.type === 'tailor-made' ? 'bg-blue-100 text-blue-800' : 'bg-yellow-100 text-yellow-800'}`}>
+                  <span class={`inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium ${project.type === 'tailor-made' ? 'bg-yellow-100 text-yellow-800' : 'bg-blue-100 text-blue-800'}`}>
                     {project.typeLabel}
                   </span>
                 </div>
@@ -116,7 +116,7 @@ const types = ['Tous', 'Sur mesure', 'Renfort équipe'];
                 <p class="text-gray-600 text-sm flex-1">{project.description}</p>
                 <div class="flex flex-wrap gap-1.5 mt-2">
                   {project.stack.map((tech) => (
-                    <span class="inline-flex items-center px-2 py-0.5 rounded text-xs bg-white border border-gray-200 text-gray-600">{tech}</span>
+                    <span class="inline-flex items-center px-2 py-0.5 rounded text-xs bg-gray-50 border border-gray-200 text-gray-600">{tech}</span>
                   ))}
                 </div>
               </div>
@@ -135,13 +135,13 @@ const types = ['Tous', 'Sur mesure', 'Renfort équipe'];
     <section class="py-12 bg-gray-50 border-y border-gray-200">
       <div class="layout grid grid-cols-2 lg:grid-cols-4 gap-8 text-center">
         {[
-          { value: '65+', label: 'Projets web réalisés' },
-          { value: '110+', label: 'Clients satisfaits' },
-          { value: '2017', label: 'Année de création' },
-          { value: '3', label: 'Langues maîtrisées' },
+          { value: '65+', label: 'Projets web réalisés', color: 'text-yellow-500' },
+          { value: '110+', label: 'Clients satisfaits', color: 'text-blue-500' },
+          { value: '2017', label: 'Année de création', color: 'text-red-500' },
+          { value: '3', label: 'Langues maîtrisées', color: 'text-yellow-500' },
         ].map((stat) => (
           <div>
-            <p class="text-4xl font-mono font-bold mb-1">{stat.value}</p>
+            <p class={`text-4xl font-mono font-bold mb-1 ${stat.color}`}>{stat.value}</p>
             <p class="text-sm text-gray-600">{stat.label}</p>
           </div>
         ))}

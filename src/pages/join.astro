@@ -124,19 +124,19 @@ const closedPositions = [
     </section>
 
     <!-- Values / why join -->
-    <section class="py-16 lg:py-24 bg-background">
+    <section class="py-16 lg:py-24 bg-yellow-50">
       <div class="layout">
         <h2 class="h2 mb-10">Pourquoi rejoindre la tribu ?</h2>
         <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
           {[
-            { icon: '🚀', title: 'Des projets stimulants', desc: 'Tu travailleras sur des projets variés et challengeants pour des clients innovants.' },
-            { icon: '🤝', title: 'Une équipe bienveillante', desc: 'Une ambiance de travail positive, de l\'entraide et une vraie culture d\'équipe.' },
-            { icon: '📈', title: 'Montée en compétences', desc: 'Formations, veille technologique, participation à des conférences.' },
-            { icon: '🏠', title: 'Flexibilité', desc: 'Télétravail partiel possible, horaires flexibles et environnement de travail sain.' },
-            { icon: '💡', title: 'Autonomie', desc: 'Tu as de vraies responsabilités et ta parole compte dans les décisions techniques.' },
-            { icon: '🎉', title: 'Vie d\'équipe', desc: 'Afterworks, team buildings, déjeuners d\'équipe... On sait aussi s\'amuser !' },
+            { icon: '🚀', title: 'Des projets stimulants', desc: 'Tu travailleras sur des projets variés et challengeants pour des clients innovants.', accent: 'border-t-yellow-500' },
+            { icon: '🤝', title: 'Une équipe bienveillante', desc: 'Une ambiance de travail positive, de l\'entraide et une vraie culture d\'équipe.', accent: 'border-t-blue-500' },
+            { icon: '📈', title: 'Montée en compétences', desc: 'Formations, veille technologique, participation à des conférences.', accent: 'border-t-red-500' },
+            { icon: '🏠', title: 'Flexibilité', desc: 'Télétravail partiel possible, horaires flexibles et environnement de travail sain.', accent: 'border-t-yellow-500' },
+            { icon: '💡', title: 'Autonomie', desc: 'Tu as de vraies responsabilités et ta parole compte dans les décisions techniques.', accent: 'border-t-blue-500' },
+            { icon: '🎉', title: 'Vie d\'équipe', desc: 'Afterworks, team buildings, déjeuners d\'équipe... On sait aussi s\'amuser !', accent: 'border-t-red-500' },
           ].map((item) => (
-            <div class="p-6 bg-gray-50 border border-gray-200 rounded-xl flex flex-col gap-3">
+            <div class={`p-6 bg-white border border-t-4 ${item.accent} border-gray-200 rounded-xl flex flex-col gap-3`}>
               <span class="text-3xl">{item.icon}</span>
               <h3 class="font-mono font-medium">{item.title}</h3>
               <p class="text-gray-600 text-sm">{item.desc}</p>
@@ -152,7 +152,7 @@ const closedPositions = [
         <h2 class="h2 text-white mb-4">Tu as trouvé l'offre de tes rêves ?</h2>
         <p class="text-gray-400 mb-8 max-w-xl mx-auto">Envoie-nous ta candidature avec ton CV et une présentation à jobs@kinoba.fr, ou passe par notre formulaire de contact.</p>
         <div class="flex flex-wrap justify-center gap-4">
-          <a href="mailto:jobs@kinoba.fr" class="inline-flex items-center gap-2 bg-background text-black font-medium px-6 py-3 rounded-md hover:bg-background/90 transition-colors">
+          <a href="mailto:jobs@kinoba.fr" class="inline-flex items-center gap-2 bg-yellow-500 text-black font-medium px-6 py-3 rounded-md hover:bg-yellow-400 transition-colors">
             Envoyer ma candidature
           </a>
           <a href="/contact?subject=apply" class="inline-flex items-center gap-2 border border-white text-white font-medium px-6 py-3 rounded-md hover:bg-white/10 transition-colors">

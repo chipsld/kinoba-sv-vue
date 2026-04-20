@@ -6,9 +6,11 @@ import Background from '@/components/background.vue';
 <DefaultLayout title="Développement web sur mesure | Kinoba" description="Concevons ta plateforme web sur mesure. Kinoba, agence web partenaire qui t'aide à innover.">
   <Background className="via-muted to-muted/80">
 
-    <!-- Hero -->
+    <!-- Hero — bande jaune en haut -->
     <section class="relative pt-40 pb-16 lg:pt-52 lg:pb-24 overflow-hidden">
+      <div class="absolute top-0 left-0 right-0 h-1 bg-yellow-500"></div>
       <div class="layout">
+        <span class="inline-block px-3 py-1 rounded-full text-xs font-medium bg-yellow-500/20 text-yellow-700 mb-4">Offre sur mesure</span>
         <h1 class="h1 mb-6">Développement web sur mesure</h1>
         <p class="text-xl text-muted-foreground max-w-2xl">Concevons ta plateforme web sur mesure</p>
       </div>
@@ -26,7 +28,7 @@ import Background from '@/components/background.vue';
           </div>
           <div class="flex flex-wrap gap-2 mt-8">
             {['B2B', 'SaaS', 'Marketplace', 'E-commerce', 'Site vitrine', 'Application web'].map((badge) => (
-              <span class="inline-flex items-center px-3 py-1 rounded-full text-sm font-medium bg-gray-100 text-gray-800 border border-gray-200">
+              <span class="inline-flex items-center px-3 py-1 rounded-full text-sm font-medium bg-yellow-500/10 text-yellow-800 border border-yellow-300">
                 {badge}
               </span>
             ))}
@@ -40,7 +42,7 @@ import Background from '@/components/background.vue';
     </section>
 
     <!-- Process -->
-    <section class="py-16 lg:py-24 bg-gray-50">
+    <section class="py-16 lg:py-24 bg-yellow-50">
       <div class="layout">
         <div class="mb-12">
           <h2 class="h2 mb-4">De ton idée à sa réalisation</h2>
@@ -56,8 +58,8 @@ import Background from '@/components/background.vue';
             { num: '05', title: 'Mise en ligne', desc: 'L\'installation. Ton produit est mis en production dans les meilleures conditions, avec une infrastructure solide.' },
             { num: '06', title: 'Maintenance et améliorations', desc: 'Le suivi du chantier. Monitoring, corrections de bugs, évolutions fonctionnelles et mises à jour de sécurité.' },
           ].map((step) => (
-            <div class="p-6 bg-white border border-gray-200 rounded-xl flex flex-col gap-3">
-              <span class="text-4xl font-mono font-bold text-gray-200">{step.num}</span>
+            <div class="p-6 bg-white border border-yellow-200 rounded-xl flex flex-col gap-3">
+              <span class="text-4xl font-mono font-bold text-yellow-500">{step.num}</span>
               <h3 class="h3 text-black">{step.title}</h3>
               <p class="text-gray-600 text-sm">{step.desc}</p>
             </div>
@@ -65,7 +67,7 @@ import Background from '@/components/background.vue';
         </div>
 
         <!-- Method stacks -->
-        <div class="bg-white border border-gray-200 rounded-xl p-6 lg:p-10">
+        <div class="bg-white border border-yellow-200 rounded-xl p-6 lg:p-10">
           <h3 class="h3 mb-6">Notre boîte à outils</h3>
           <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
             {[
@@ -76,10 +78,10 @@ import Background from '@/components/background.vue';
               { label: 'Serveurs', items: ['Docker', 'Kubernetes', 'Heroku', 'OVH', 'AWS'] },
             ].map((group) => (
               <div>
-                <p class="text-xs text-gray-500 uppercase tracking-wide mb-2 font-medium">{group.label}</p>
+                <p class="text-xs text-yellow-700 uppercase tracking-wide mb-2 font-medium">{group.label}</p>
                 <div class="flex flex-wrap gap-2">
                   {group.items.map((item) => (
-                    <span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs bg-gray-100 text-gray-700">{item}</span>
+                    <span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs bg-yellow-50 border border-yellow-200 text-gray-700">{item}</span>
                   ))}
                 </div>
               </div>
@@ -98,23 +100,11 @@ import Background from '@/components/background.vue';
         </div>
         <div class="grid md:grid-cols-3 gap-6">
           {[
-            {
-              icon: '✅',
-              title: 'Validations techniques',
-              desc: 'Chaque ligne de code est testée et vérifiée par plusieurs développeurs avant livraison. Pull requests, code reviews et tests automatisés font partie de notre processus standard.',
-            },
-            {
-              icon: '🧪',
-              title: 'Tests automatiques',
-              desc: 'Pour garantir la qualité, nous rédigeons des tests automatisés (unitaires, d\'intégration, end-to-end) qui nous permettent de livrer en toute confiance.',
-            },
-            {
-              icon: '🔒',
-              title: 'Sécurité et RGPD',
-              desc: 'La sécurité des données, le stockage du code et l\'infrastructure serveurs est une priorité. Nous respectons les bonnes pratiques de sécurité et les obligations RGPD.',
-            },
+            { icon: '✅', title: 'Validations techniques', accent: 'border-t-yellow-500', bg: 'bg-yellow-50', desc: 'Chaque ligne de code est testée et vérifiée par plusieurs développeurs avant livraison. Pull requests, code reviews et tests automatisés font partie de notre processus standard.' },
+            { icon: '🧪', title: 'Tests automatiques', accent: 'border-t-red-500', bg: 'bg-red-50', desc: 'Pour garantir la qualité, nous rédigeons des tests automatisés (unitaires, d\'intégration, end-to-end) qui nous permettent de livrer en toute confiance.' },
+            { icon: '🔒', title: 'Sécurité et RGPD', accent: 'border-t-blue-500', bg: 'bg-blue-50', desc: 'La sécurité des données, le stockage du code et l\'infrastructure serveurs est une priorité. Nous respectons les bonnes pratiques de sécurité et les obligations RGPD.' },
           ].map((item) => (
-            <div class="p-6 bg-gray-50 border border-gray-200 rounded-xl flex flex-col gap-3">
+            <div class={`p-6 border border-t-4 rounded-xl flex flex-col gap-3 ${item.accent} ${item.bg} border-gray-200`}>
               <span class="text-3xl">{item.icon}</span>
               <h3 class="h3">{item.title}</h3>
               <p class="text-gray-600 text-sm">{item.desc}</p>
@@ -125,7 +115,7 @@ import Background from '@/components/background.vue';
     </section>
 
     <!-- Sectors -->
-    <section class="py-16 lg:py-24 bg-gray-50">
+    <section class="py-16 lg:py-24 bg-yellow-50">
       <div class="layout">
         <div class="mb-8">
           <h2 class="h2 mb-4">Une offre qui a fait ses preuves</h2>
@@ -133,7 +123,7 @@ import Background from '@/components/background.vue';
         </div>
         <div class="flex flex-wrap gap-2 mb-12">
           {['Voyage & Tourisme', 'Luxe', 'Santé', 'Industrie', 'Immobilier', 'Énergie', 'Droit', 'Entrepreneuriat'].map((sector) => (
-            <span class="inline-flex items-center px-3 py-1.5 rounded-full text-sm font-medium bg-black text-white">
+            <span class="inline-flex items-center px-3 py-1.5 rounded-full text-sm font-medium bg-yellow-500 text-black">
               {sector}
             </span>
           ))}
@@ -151,7 +141,7 @@ import Background from '@/components/background.vue';
     <section class="py-16 lg:py-24 bg-black text-white">
       <div class="layout text-center">
         <h2 class="h2 text-white mb-6">Une question par rapport à cette offre ?</h2>
-        <a href="/contact" class="inline-flex items-center gap-2 bg-white text-black font-medium px-6 py-3 rounded-md hover:bg-white/90 transition-colors">
+        <a href="/contact" class="inline-flex items-center gap-2 bg-yellow-500 text-black font-medium px-6 py-3 rounded-md hover:bg-yellow-400 transition-colors">
           Contacte nous
         </a>
       </div>
