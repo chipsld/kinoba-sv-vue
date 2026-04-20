@@ -1,0 +1,84 @@
+---
+import DefaultLayout from '@/layouts/DefaultLayout.astro';
+import Background from '@/components/background.vue';
+---
+
+<DefaultLayout title="Mentions légales | Kinoba" description="Mentions légales du site kinoba.fr - Informations légales, hébergement, RGPD et cookies.">
+  <Background className="via-muted to-muted/80">
+
+    <!-- Hero -->
+    <section class="relative pt-40 pb-12 lg:pt-52 lg:pb-16">
+      <div class="layout">
+        <h1 class="h1 mb-4">Mentions légales</h1>
+      </div>
+    </section>
+
+    <!-- Content -->
+    <section class="py-12 lg:py-16 bg-white">
+      <div class="layout max-w-3xl">
+        <p class="text-gray-600 mb-10">Le site Internet accessible à l'adresse <a href="https://kinoba.fr/" class="underline hover:no-underline">https://kinoba.fr/</a> est la propriété de la société KINOBA.</p>
+
+        <div class="flex flex-col gap-10">
+
+          <div>
+            <h2 class="h2 mb-4">Éditeur du site internet</h2>
+            <div class="text-gray-700 flex flex-col gap-2">
+              <p><strong>KINOBA SAS</strong></p>
+              <p>Directeur de la publication : Gabriel CALMELS</p>
+              <p>Email : <a href="mailto:hello@kinoba.fr" class="underline hover:no-underline">hello@kinoba.fr</a></p>
+              <p>Numéro de TVA intracommunautaire : FR 60 830 744 876</p>
+              <p>SIRET : 830 744 876 00046</p>
+              <p>RCS : Lyon B 830 744 876</p>
+              <p>Siège social : 7 place Ferrandière, 69003 Lyon</p>
+            </div>
+          </div>
+
+          <div>
+            <h2 class="h2 mb-4">Hébergeur</h2>
+            <div class="text-gray-700 flex flex-col gap-2">
+              <p><strong>OVH SAS</strong></p>
+              <p>2 rue Kellermann</p>
+              <p>59100 Roubaix, France</p>
+              <p>SIRET : 424 761 419 00045</p>
+            </div>
+          </div>
+
+          <div>
+            <h2 class="h2 mb-4">Informatique et libertés</h2>
+            <p class="text-gray-700">Conformément à la loi n° 78-17 du 6 janvier 1978 relative à l'informatique, aux fichiers et aux libertés (loi Informatique et Libertés), vous disposez d'un droit d'accès, de rectification, de suppression et d'opposition aux données personnelles vous concernant. Pour exercer ces droits, vous pouvez contacter Kinoba à l'adresse email <a href="mailto:hello@kinoba.fr" class="underline hover:no-underline">hello@kinoba.fr</a>.</p>
+          </div>
+
+          <div>
+            <h2 class="h2 mb-4">Politique sur les cookies</h2>
+            <p class="text-gray-700">Ce site utilise des cookies pour améliorer votre expérience de navigation et réaliser des statistiques d'audience. Vous pouvez à tout moment modifier vos préférences en matière de cookies en utilisant les boutons ci-dessous.</p>
+            <div class="flex flex-wrap gap-3 mt-4">
+              <button class="inline-flex items-center gap-2 bg-black text-white font-medium px-5 py-2.5 rounded-md hover:bg-black/80 transition-colors text-sm">
+                Accepter les cookies
+              </button>
+              <button class="inline-flex items-center gap-2 border border-gray-300 text-gray-700 font-medium px-5 py-2.5 rounded-md hover:border-black transition-colors text-sm">
+                Refuser les cookies
+              </button>
+            </div>
+          </div>
+
+          <div>
+            <h2 class="h2 mb-4">Conditions générales de prestations de services</h2>
+            <p class="text-gray-700">Nos conditions générales de prestations de services sont disponibles sur demande à l'adresse <a href="mailto:hello@kinoba.fr" class="underline hover:no-underline">hello@kinoba.fr</a>.</p>
+          </div>
+
+          <div>
+            <h2 class="h2 mb-4">Propriété intellectuelle</h2>
+            <p class="text-gray-700">L'ensemble du contenu de ce site (textes, images, vidéos, logos, icônes, etc.) est protégé par le droit de la propriété intellectuelle. Toute reproduction, représentation, modification ou exploitation, totale ou partielle, du contenu de ce site sans l'autorisation expresse de Kinoba est interdite.</p>
+          </div>
+
+          <div>
+            <h2 class="h2 mb-4">Limitation de responsabilité</h2>
+            <p class="text-gray-700">Kinoba s'efforce de fournir des informations aussi précises que possible sur ce site. Cependant, Kinoba ne pourra être tenu responsable des omissions, inexactitudes et carences dans la mise à jour, qu'elles soient de son fait ou du fait des tiers partenaires qui lui fournissent ces informations.</p>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+  </Background>
+</DefaultLayout>

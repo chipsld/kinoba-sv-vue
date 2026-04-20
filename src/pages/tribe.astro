@@ -6,25 +6,37 @@ import Background from '@/components/background.vue';
 import { Image } from 'astro:assets';
 import teamImage from '@/assets/images/team/team.jpg';
 
-const tribe = 'tribe';
-
-// Translation function (adapt to your i18n system)
-const t = (key: string, params: Record<string, unknown> = {}) => {
-  // TODO: Implement your translation function
-  return key;
-};
-
-// TODO: Define FORMER_MEMBERS constant in consts.ts
-const FORMER_MEMBERS: typeof TEAM = [];
+const FORMER_MEMBERS = [
+  {
+    name: 'Jeanne',
+    key: 'jeanne',
+    emoji: '🦮',
+    linkedin: '',
+    job: 'Ancienne membre de la tribu',
+    title: 'Redoutable guerrière de tous les fronts',
+    text: '',
+    totem: '',
+  },
+  {
+    name: 'Laura',
+    key: 'laura',
+    emoji: '🐒',
+    linkedin: '',
+    job: 'Ancienne membre de la tribu',
+    title: 'Redoutable guerrière de tous les fronts',
+    text: '',
+    totem: '',
+  },
+];
 ---
 
-<DefaultLayout title="Tribe" description="Meet our team">
+<DefaultLayout title="La tribu Kinoba | Kinoba" description="La tribu d'experts du web Kinoba. Découvrez l'équipe de développeurs, designers et chefs de projet qui font Kinoba.">
     <Background className="via-muted to-muted/80">
   <!-- Hero Banner Section -->
-  <div class="relative h-96 overflow-hidden bg-linear-to-b  flex items-center justify-center">
-    <h1 class="h1 text-white text-center">
-      La tribu Kinoba
-    </h1>
+  <div class="relative pt-40 pb-16 lg:pt-52 lg:pb-24 overflow-hidden flex items-center">
+    <div class="layout">
+      <h1 class="h1">La tribu Kinoba</h1>
+    </div>
   </div>
 
   <!-- Intro Section -->
@@ -37,7 +49,7 @@ const FORMER_MEMBERS: typeof TEAM = [];
         <div class="w-full h-72">
           <Image
             src={teamImage}
-            alt={t('alt.team_image')}
+            alt="L'équipe Kinoba"
             class="w-full h-full object-cover"
             width="400"
             height="200"
@@ -47,9 +59,9 @@ const FORMER_MEMBERS: typeof TEAM = [];
       </div>
 
       <div class="flex flex-col gap-8 opacity-80 text-white">
-        <p>Historiquement, les ingénieurs et développeurs web à l'origine de l'agence ont été sollicités par plusieurs entrepreneurs pour créer leurs marketplaces, sites e-commerce et applications web métier. De simple agence Ruby on Rails à agence web pluridisciplinaire, nous travaillons depuis nos débuts avec des technologies de pointe adaptées à des clients faisant face à un marché en constante évolution.
-
-Nous avons dans notre ADN la création de produits web complexes qui traduisent directement le business model de nos clients. Pour maitriser ton produit, toutes nos créations sont faites en interne grâce à l'expertise de l'équipe : développement web, ux design, ui design, infrastructure serveurs, maintenance de serveurs, devOps, hébergement web et gestion de projet web.</p>
+        <p>Historiquement, les ingénieurs et développeurs web à l'origine de l'agence ont été sollicités par plusieurs entrepreneurs pour créer leurs marketplaces, sites e-commerce et applications web métier. De simple agence Ruby on Rails à agence web pluridisciplinaire, nous travaillons depuis nos débuts avec des technologies de pointe adaptées à des clients faisant face à un marché en constante évolution.</p>
+        <p>Nous avons dans notre ADN la création de produits web complexes qui traduisent directement le business model de nos clients. Pour maitriser ton produit, toutes nos créations sont faites en interne grâce à l'expertise de l'équipe : développement web, ux design, ui design, infrastructure serveurs, maintenance de serveurs, devOps, hébergement web et gestion de projet web.</p>
+        <p>Notre leitmotiv : développer ensemble, pour créer des produits web innovants et de qualité.</p>
       </div>
     </div>
   </section>
@@ -61,18 +73,17 @@ Nous avons dans notre ADN la création de produits web complexes qui traduisent 
         <TeamAccordion
           member={member}
           accordionName="member"
-          t={t}
         />
       ))}
 
       <!-- Join Section -->
       <div class="lg:col-span-2 flex items-center flex-wrap gap-4">
-        <p class="font-bold text-white">{t(`${tribe}.join`)}</p>
+        <p class="font-bold text-white">À ton tour de rejoindre l'équipe ?</p>
         <a
           href="/join"
           class="text-sm opacity-80 transition-arrow flex items-center gap-2 p-2 -ml-2 text-white hover:opacity-100"
         >
-          {t(`${tribe}.join_link`)}
+          Découvre les offres disponibles
           <svg
             class="w-4 h-4"
             fill="none"
@@ -92,15 +103,14 @@ Nous avons dans notre ADN la création de produits web complexes qui traduisent 
       <!-- Former Members Section -->
       <div class="lg:col-span-2 overflow-hidden">
         <h2 class="h2 text-white" data-aos="fade-up">
-          {t(`${tribe}.former.title`)}
+          Ils sont passés par ici, ils repasseront par là ?
         </h2>
       </div>
 
-      {FORMER_MEMBERS.length > 0 && FORMER_MEMBERS.map((member) => (
+      {FORMER_MEMBERS.map((member) => (
         <TeamAccordion
           member={member}
           accordionName="former-member"
-          t={t}
         />
       ))}
     </div>

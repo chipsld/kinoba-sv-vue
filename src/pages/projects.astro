@@ -1,0 +1,166 @@
+---
+import DefaultLayout from '@/layouts/DefaultLayout.astro';
+import Background from '@/components/background.vue';
+
+// Static project data representing kinoba's portfolio (since this is a static Astro site)
+const projects = [
+  {
+    slug: 'taxexempt',
+    type: 'tailor-made',
+    typeLabel: 'Sur mesure',
+    name: 'TaxExempt',
+    sector: 'Droit & Fiscalité',
+    description: 'Plateforme SaaS de gestion des exonérations fiscales pour les professionnels du droit.',
+    stack: ['Ruby on Rails', 'Vue.js', 'PostgreSQL'],
+  },
+  {
+    slug: 'mytravel',
+    type: 'tailor-made',
+    typeLabel: 'Sur mesure',
+    name: 'MyTravel',
+    sector: 'Voyage & Tourisme',
+    description: 'Application web de gestion de voyages d\'affaires pour les grandes entreprises.',
+    stack: ['Ruby on Rails', 'React', 'PostgreSQL'],
+  },
+  {
+    slug: 'ysance',
+    type: 'team-reinforcement',
+    typeLabel: 'Renfort équipe',
+    name: 'Ysance',
+    sector: 'Data & Marketing',
+    description: 'Renfort d\'équipe sur une plateforme de data marketing pour l\'e-commerce.',
+    stack: ['Ruby on Rails', 'Angular', 'Docker'],
+  },
+  {
+    slug: 'lucca',
+    type: 'team-reinforcement',
+    typeLabel: 'Renfort équipe',
+    name: 'Lucca',
+    sector: 'RH & SaaS',
+    description: 'Renfort de l\'équipe de développement d\'un logiciel RH SaaS leader en France.',
+    stack: ['Symfony', 'Vue.js', 'Kubernetes'],
+  },
+  {
+    slug: 'wingie',
+    type: 'tailor-made',
+    typeLabel: 'Sur mesure',
+    name: 'Wingie',
+    sector: 'Voyage & Tourisme',
+    description: 'Marketplace de vols et hôtels low-cost avec moteur de recherche avancé.',
+    stack: ['Ruby on Rails', 'React', 'Elasticsearch'],
+  },
+  {
+    slug: 'socotec',
+    type: 'team-reinforcement',
+    typeLabel: 'Renfort équipe',
+    name: 'Socotec',
+    sector: 'Industrie & BTP',
+    description: 'Renfort technique sur une application métier de gestion de contrôles réglementaires.',
+    stack: ['Vue.js', 'Laravel', 'MySQL'],
+  },
+];
+
+const sectors = ['Tous', 'Voyage & Tourisme', 'Droit & Fiscalité', 'Data & Marketing', 'RH & SaaS', 'Industrie & BTP'];
+const types = ['Tous', 'Sur mesure', 'Renfort équipe'];
+---
+
+<DefaultLayout title="Cas clients | Kinoba" description="Découvrez une sélection de solutions web : site vitrine, e-commerce, marketplace ou logiciels métier réalisés par Kinoba.">
+  <Background className="via-muted to-muted/80">
+
+    <!-- Hero -->
+    <section class="relative pt-40 pb-16 lg:pt-52 lg:pb-24">
+      <div class="layout">
+        <h1 class="h1 mb-6">Cas clients</h1>
+        <p class="text-xl text-muted-foreground max-w-2xl">Découvrez une sélection de nos réalisations : applications web sur mesure, marketplaces, logiciels métier et missions de renfort d'équipes.</p>
+      </div>
+    </section>
+
+    <!-- Filters + Grid -->
+    <section class="py-16 lg:py-24 bg-white">
+      <div class="layout">
+        <!-- Filter pills (static, visual only) -->
+        <div class="flex flex-wrap gap-3 mb-10">
+          <div class="flex flex-wrap gap-2 items-center">
+            <span class="text-sm text-gray-500 mr-1">Offre :</span>
+            {types.map((type) => (
+              <span class={`inline-flex items-center px-3 py-1 rounded-full text-sm cursor-pointer border transition-colors ${type === 'Tous' ? 'bg-black text-white border-black' : 'bg-white text-gray-700 border-gray-200 hover:border-black'}`}>
+                {type}
+              </span>
+            ))}
+          </div>
+          <div class="flex flex-wrap gap-2 items-center mt-2 w-full">
+            <span class="text-sm text-gray-500 mr-1">Secteur :</span>
+            {sectors.map((sector) => (
+              <span class={`inline-flex items-center px-3 py-1 rounded-full text-sm cursor-pointer border transition-colors ${sector === 'Tous' ? 'bg-black text-white border-black' : 'bg-white text-gray-700 border-gray-200 hover:border-black'}`}>
+                {sector}
+              </span>
+            ))}
+          </div>
+        </div>
+
+        <!-- Projects grid -->
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+          {projects.map((project) => (
+            <article class="group flex flex-col bg-gray-50 border border-gray-200 rounded-xl overflow-hidden hover:border-black transition-colors">
+              <div class="bg-gray-200 h-44 flex items-center justify-center">
+                <span class="text-5xl font-mono font-bold text-gray-400">{project.name[0]}</span>
+              </div>
+              <div class="p-6 flex flex-col gap-3 flex-1">
+                <div class="flex items-center justify-between">
+                  <span class="text-xs font-medium uppercase tracking-wide text-gray-500">{project.sector}</span>
+                  <span class={`inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium ${project.type === 'tailor-made' ? 'bg-blue-100 text-blue-800' : 'bg-yellow-100 text-yellow-800'}`}>
+                    {project.typeLabel}
+                  </span>
+                </div>
+                <h3 class="h3 text-black">{project.name}</h3>
+                <p class="text-gray-600 text-sm flex-1">{project.description}</p>
+                <div class="flex flex-wrap gap-1.5 mt-2">
+                  {project.stack.map((tech) => (
+                    <span class="inline-flex items-center px-2 py-0.5 rounded text-xs bg-white border border-gray-200 text-gray-600">{tech}</span>
+                  ))}
+                </div>
+              </div>
+            </article>
+          ))}
+        </div>
+
+        <!-- Bottom note -->
+        <p class="text-center text-gray-500 text-sm mt-12">
+          Ces projets sont une sélection représentative de nos réalisations. Contactez-nous pour en savoir plus ou voir des projets similaires au vôtre.
+        </p>
+      </div>
+    </section>
+
+    <!-- Stats banner -->
+    <section class="py-12 bg-gray-50 border-y border-gray-200">
+      <div class="layout grid grid-cols-2 lg:grid-cols-4 gap-8 text-center">
+        {[
+          { value: '65+', label: 'Projets web réalisés' },
+          { value: '110+', label: 'Clients satisfaits' },
+          { value: '2017', label: 'Année de création' },
+          { value: '3', label: 'Langues maîtrisées' },
+        ].map((stat) => (
+          <div>
+            <p class="text-4xl font-mono font-bold mb-1">{stat.value}</p>
+            <p class="text-sm text-gray-600">{stat.label}</p>
+          </div>
+        ))}
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="py-16 lg:py-24 bg-black text-white">
+      <div class="layout text-center">
+        <h2 class="h2 text-white mb-6">Un projet similaire ?</h2>
+        <p class="text-gray-400 mb-8 max-w-xl mx-auto">Parle-nous de ton projet et découvrons ensemble comment Kinoba peut t'aider à le réaliser.</p>
+        <a href="/contact" class="inline-flex items-center gap-2 bg-white text-black font-medium px-6 py-3 rounded-md hover:bg-white/90 transition-colors">
+          Parle-nous de ton projet
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+          </svg>
+        </a>
+      </div>
+    </section>
+
+  </Background>
+</DefaultLayout>

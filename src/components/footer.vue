@@ -1,21 +1,23 @@
 <script setup lang="ts">
-import { GITHUB_URL } from "@/consts";
 import logoUrl from "../assets/images/logos/kinoba.svg?url";
 
 const navigation = [
-  { name: "Product", href: "/#feature-modern-teams" },
-  { name: "About Us", href: "/about" },
-  { name: "Pricing", href: "/pricing" },
-  { name: "FAQ", href: "/faq" },
+  { name: "Cas clients", href: "/projects" },
+  { name: "Développement sur mesure", href: "/tailor-made" },
+  { name: "Renfort d'équipes", href: "/team-reinforcement" },
+  { name: "Services", href: "/services" },
+  { name: "Tribu", href: "/tribe" },
+  { name: "Offres d'emploi", href: "/join" },
   { name: "Contact", href: "/contact" },
 ];
 
 const social = [
-  { name: "Xwitter", href: "https://x.com/ausrobdev" },
-  { name: "LinkedIn", href: "#" },
+  { name: "LinkedIn", href: "https://www.linkedin.com/company/kinoba/" },
+  { name: "GitHub", href: "https://github.com/kinoba" },
+  { name: "Medium", href: "https://kinoba.medium.com" },
 ];
 
-const legal = [{ name: "Privacy Policy", href: "/privacy" }];
+const legal = [{ name: "Mentions légales", href: "/legal-mentions" }];
 </script>
 
 <template>
@@ -25,9 +27,18 @@ const legal = [{ name: "Privacy Policy", href: "/privacy" }];
       <p
         class="text-muted-foreground mx-auto max-w-xl leading-snug text-balance"
       >
-        Agence de développement web sur mesure et renfort d’équipes
+        Agence de développement web sur mesure et renfort d'équipes
         informatiques, pour entreprises innovantes.
       </p>
+      <p class="text-muted-foreground text-sm">
+        Lyon — 7 place Ferrandière, 69003 &nbsp;·&nbsp; Paris — 94 rue du
+        Temple, 75003
+      </p>
+      <a
+        href="mailto:hello@kinoba.fr"
+        class="text-sm text-muted-foreground hover:text-foreground transition-colors"
+        >hello@kinoba.fr</a
+      >
     </div>
 
     <nav class="container flex flex-col items-center gap-4">

@@ -1,0 +1,115 @@
+---
+import DefaultLayout from '@/layouts/DefaultLayout.astro';
+import Background from '@/components/background.vue';
+import ServiceCard from '@/components/service-card.astro';
+
+const services = [
+  {
+    id: 'web-development',
+    icon: 'code',
+    title: 'Développement web',
+    subtitle: 'Pour un produit de qualité : une forte expertise technique pour garder ta plateforme web à la pointe de la technologie.',
+    description: 'Technologies performantes, open source et non propriétaires. Notre équipe de développeurs front-end, back-end et full-stack maîtrise un large éventail de technologies pour créer des produits web robustes, scalables et maintenables.',
+    stacks: [
+      { label: 'backend', items: ['Ruby on Rails', 'Node.js', 'Symfony', 'Django', 'Laravel'] },
+      { label: 'frontend', items: ['React', 'Vue.js', 'Angular', 'Svelte', 'TypeScript'] },
+      { label: 'design', items: ['Tailwind CSS', 'Bulma', 'Bootstrap', 'Sass', 'CSS'] },
+    ],
+  },
+  {
+    id: 'ux-ui-design',
+    icon: 'click',
+    title: 'UX & UI Design',
+    subtitle: 'Pour te démarquer : des wireframes et maquettes graphiques respectant le comportement utilisateur, et une identité graphique unique.',
+    description: 'Interfaces pensées pour une UX fluide et une UI unique. Nous concevons des expériences utilisateur qui convertissent, en partant des besoins réels de tes utilisateurs. De l\'identité de marque jusqu\'au prototype interactif.',
+    stacks: [
+      { label: 'outils', items: ['Figma', 'FigJam', 'Adobe Creative Suite'] },
+      { label: 'livrables', items: ['Design system', 'Charte graphique', 'Logo', 'Maquette', 'Prototypage'] },
+    ],
+  },
+  {
+    id: 'project-management',
+    icon: 'calendar',
+    title: 'Gestion de projet web',
+    subtitle: 'Pour garder le cap : un interlocuteur unique et une équipe technique dédiée sur toute la durée de ton projet.',
+    description: 'Méthodologie développée avec nos clients depuis 2017. Un chef de projet dédié coordonne les équipes, suit les délais et le budget, et t\'informe à chaque étape. Nous travaillons en sprints de 2 semaines avec des points réguliers.',
+    stacks: [
+      { items: ['Agile', 'Trello', 'Slack', 'Sprints', 'Suivi budget'] },
+    ],
+  },
+  {
+    id: 'infrastructure',
+    icon: 'cloud',
+    title: 'Infrastructure & maintenance de serveurs',
+    subtitle: 'Pour anticiper les imprévus : de la maintenance et du monitoring de bugs en continu.',
+    description: 'Compétences DevOps, infrastructure serveurs, processus automatisé de tests, reporting de bugs et maintenance continue. Nous prenons en charge la gestion de ton hébergement web pour que tu puisses te concentrer sur ton business.',
+    stacks: [
+      { items: ['Jenkins', 'Kubernetes', 'Docker', 'Sentry', 'Heroku', 'CI/CD', 'GitHub Actions'] },
+    ],
+  },
+];
+---
+
+<DefaultLayout title="Les services web | Kinoba" description="Les services web et notre expertise technique à ta disposition. Développement, UX/UI, gestion de projet, infrastructure.">
+  <Background className="via-muted to-muted/80">
+
+    <!-- Hero -->
+    <section class="relative pt-40 pb-16 lg:pt-52 lg:pb-24">
+      <div class="layout">
+        <h1 class="h1 mb-6">Les services</h1>
+        <p class="text-xl text-muted-foreground max-w-2xl">En tant qu'agence web polyvalente, nous offrons une gamme complète de services pour répondre à tous tes besoins numériques — de la conception à la mise en production.</p>
+      </div>
+    </section>
+
+    <!-- Services list -->
+    <section class="py-16 lg:py-24 bg-white">
+      <div class="layout flex flex-col gap-16">
+        {services.map((service, index) => (
+          <div id={service.id} class="grid lg:grid-cols-2 gap-10 lg:gap-20 items-start">
+            <div class={index % 2 === 1 ? 'lg:order-2' : ''}>
+              <div class="flex items-center gap-3 mb-4">
+                <ServiceCard
+                  icon={service.icon}
+                  title={service.title}
+                  description={service.subtitle}
+                />
+              </div>
+            </div>
+            <div class={index % 2 === 1 ? 'lg:order-1' : ''}>
+              <p class="text-gray-700 mb-6">{service.description}</p>
+              <div class="flex flex-col gap-4">
+                {service.stacks.map((stack) => (
+                  <div>
+                    {stack.label && (
+                      <p class="text-xs text-gray-500 uppercase tracking-wide mb-2 font-medium">{stack.label}</p>
+                    )}
+                    <div class="flex flex-wrap gap-2">
+                      {stack.items.map((item) => (
+                        <span class="inline-flex items-center px-3 py-1 rounded-full text-sm bg-gray-100 text-gray-700">{item}</span>
+                      ))}
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+        ))}
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="py-16 lg:py-24 bg-black text-white">
+      <div class="layout text-center">
+        <h2 class="h2 text-white mb-6">Un projet web en tête ?</h2>
+        <p class="text-gray-400 mb-8 max-w-xl mx-auto">Parlons de tes besoins et trouvons ensemble la meilleure approche pour ton projet.</p>
+        <a href="/contact" class="inline-flex items-center gap-2 bg-white text-black font-medium px-6 py-3 rounded-md hover:bg-white/90 transition-colors">
+          Contacte nous
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+          </svg>
+        </a>
+      </div>
+    </section>
+
+  </Background>
+</DefaultLayout>

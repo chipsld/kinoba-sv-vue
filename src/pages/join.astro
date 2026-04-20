@@ -1,0 +1,166 @@
+---
+import DefaultLayout from '@/layouts/DefaultLayout.astro';
+import Background from '@/components/background.vue';
+
+const openPositions = [
+  {
+    id: 7,
+    title: 'Lead développeur·se web fullstack - CDI',
+    location: 'Lyon 3',
+    experience: '3 ans+',
+    tags: ['#lead', '#rubyonrails', '#vuejs', '#angular', '#reactjs'],
+    description: 'Nous recherchons un·e lead développeur·se web fullstack passionné·e par les nouvelles technologies pour rejoindre la tribu Kinoba. Tu seras amené·e à travailler sur des projets variés, à encadrer des développeurs juniors et à participer à l\'architecture technique de nos projets.',
+    url: 'mailto:jobs@kinoba.fr?subject=Candidature Lead Dev Fullstack',
+  },
+  {
+    id: 8,
+    title: 'Développeur·se web fullstack - CDI',
+    location: 'Lyon 3',
+    experience: '3 ans+',
+    tags: ['#rubyonrails', '#vuejs', '#angular', '#reactjs'],
+    description: 'Tu es passionné·e par le développement web et tu veux rejoindre une équipe dynamique et bienveillante ? Tu travailleras sur des projets innovants pour des clients variés (startups, PME, grands groupes).',
+    url: 'mailto:jobs@kinoba.fr?subject=Candidature Dev Fullstack',
+  },
+];
+
+const closedPositions = [
+  { title: 'Projects manager - CDI', location: 'Lyon 3', experience: '3 ans+' },
+  { title: 'Lead développeur·se web fullstack & devops - CDI', location: 'Lyon 3', experience: '5 ans+' },
+  { title: 'Lead développeur·se web fullstack - CDI', location: 'Lyon 3', experience: '3 ans+' },
+  { title: 'Développeur·se web fullstack junior - CDI', location: 'Lyon 3', experience: '0-2 ans' },
+  { title: 'Commercial·e et business developer - CDI', location: 'Lyon 3', experience: '2 ans+' },
+  { title: 'Commercial·e et business developer - CDI', location: 'Lyon 3', experience: '2 ans+' },
+];
+---
+
+<DefaultLayout title="Offres d'emploi | Kinoba" description="Rejoins la tribu Kinoba ! Découvrez nos offres d'emploi en développement web à Lyon.">
+  <Background className="via-muted to-muted/80">
+
+    <!-- Hero -->
+    <section class="relative pt-40 pb-16 lg:pt-52 lg:pb-24">
+      <div class="layout">
+        <h1 class="h1 mb-6">Rejoins la tribu Kinoba !</h1>
+        <p class="text-xl text-muted-foreground max-w-2xl">Nous recherchons nos futures pépites passionnées du web. Si tu ne vois pas un poste qui correspond à ton profil mais que tu es convaincu·e de pouvoir apporter de la valeur à la tribu, envoie-nous ton CV à <a href="mailto:jobs@kinoba.fr" class="underline hover:no-underline">jobs@kinoba.fr</a>.</p>
+      </div>
+    </section>
+
+    <!-- Open positions -->
+    <section class="py-16 lg:py-24 bg-background">
+      <div class="layout">
+        <h2 class="h2 mb-10">Postes ouverts</h2>
+
+        {openPositions.length > 0 ? (
+          <div class="flex flex-col gap-6">
+            {openPositions.map((position) => (
+              <article class="border border-gray-200 rounded-xl p-6 lg:p-8 flex flex-col gap-4">
+                <div class="flex flex-wrap items-start justify-between gap-4">
+                  <div>
+                    <h3 class="h3 text-black mb-2">{position.title}</h3>
+                    <div class="flex flex-wrap gap-3 text-sm text-gray-500">
+                      <span class="flex items-center gap-1">
+                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+                          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+                        </svg>
+                        {position.location}
+                      </span>
+                      <span class="flex items-center gap-1">
+                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2 2v2m4 6h.01M5 20h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                        </svg>
+                        {position.experience}
+                      </span>
+                    </div>
+                  </div>
+                  <span class="inline-flex items-center px-3 py-1 rounded-full text-sm font-medium bg-green-100 text-green-800">Ouvert</span>
+                </div>
+
+                <p class="text-gray-600">{position.description}</p>
+
+                <div class="flex flex-wrap gap-2">
+                  {position.tags.map((tag) => (
+                    <span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs bg-gray-100 text-gray-600">{tag}</span>
+                  ))}
+                </div>
+
+                <div>
+                  <a
+                    href={position.url}
+                    class="inline-flex items-center gap-2 bg-black text-white font-medium px-5 py-2.5 rounded-md hover:bg-black/80 transition-colors text-sm"
+                  >
+                    Voir l'offre
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+                    </svg>
+                  </a>
+                </div>
+              </article>
+            ))}
+          </div>
+        ) : (
+          <div class="border border-gray-200 rounded-xl p-8 text-center text-gray-500">
+            <p>Aucun poste ouvert en ce moment. Envoie-nous ta candidature spontanée à <a href="mailto:jobs@kinoba.fr" class="underline">jobs@kinoba.fr</a>.</p>
+          </div>
+        )}
+      </div>
+    </section>
+
+    <!-- Closed positions -->
+    <section class="py-16 lg:py-24 bg-gray-50">
+      <div class="layout">
+        <h2 class="h2 mb-10">Anciennes offres</h2>
+        <div class="flex flex-col divide-y divide-gray-200 border border-gray-200 rounded-xl overflow-hidden">
+          {closedPositions.map((position) => (
+            <div class="flex flex-wrap items-center justify-between gap-4 px-6 py-4 bg-background">
+              <div>
+                <p class="font-medium text-gray-800">{position.title}</p>
+                <p class="text-sm text-gray-500">{position.location} · {position.experience}</p>
+              </div>
+              <span class="inline-flex items-center px-3 py-1 rounded-full text-xs font-medium bg-gray-100 text-gray-500">Fermé</span>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- Values / why join -->
+    <section class="py-16 lg:py-24 bg-background">
+      <div class="layout">
+        <h2 class="h2 mb-10">Pourquoi rejoindre la tribu ?</h2>
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+          {[
+            { icon: '🚀', title: 'Des projets stimulants', desc: 'Tu travailleras sur des projets variés et challengeants pour des clients innovants.' },
+            { icon: '🤝', title: 'Une équipe bienveillante', desc: 'Une ambiance de travail positive, de l\'entraide et une vraie culture d\'équipe.' },
+            { icon: '📈', title: 'Montée en compétences', desc: 'Formations, veille technologique, participation à des conférences.' },
+            { icon: '🏠', title: 'Flexibilité', desc: 'Télétravail partiel possible, horaires flexibles et environnement de travail sain.' },
+            { icon: '💡', title: 'Autonomie', desc: 'Tu as de vraies responsabilités et ta parole compte dans les décisions techniques.' },
+            { icon: '🎉', title: 'Vie d\'équipe', desc: 'Afterworks, team buildings, déjeuners d\'équipe... On sait aussi s\'amuser !' },
+          ].map((item) => (
+            <div class="p-6 bg-gray-50 border border-gray-200 rounded-xl flex flex-col gap-3">
+              <span class="text-3xl">{item.icon}</span>
+              <h3 class="font-mono font-medium">{item.title}</h3>
+              <p class="text-gray-600 text-sm">{item.desc}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="py-16 lg:py-24 bg-black text-white">
+      <div class="layout text-center">
+        <h2 class="h2 text-white mb-4">Tu as trouvé l'offre de tes rêves ?</h2>
+        <p class="text-gray-400 mb-8 max-w-xl mx-auto">Envoie-nous ta candidature avec ton CV et une présentation à jobs@kinoba.fr, ou passe par notre formulaire de contact.</p>
+        <div class="flex flex-wrap justify-center gap-4">
+          <a href="mailto:jobs@kinoba.fr" class="inline-flex items-center gap-2 bg-background text-black font-medium px-6 py-3 rounded-md hover:bg-background/90 transition-colors">
+            Envoyer ma candidature
+          </a>
+          <a href="/contact?subject=apply" class="inline-flex items-center gap-2 border border-white text-white font-medium px-6 py-3 rounded-md hover:bg-white/10 transition-colors">
+            Formulaire de contact
+          </a>
+        </div>
+      </div>
+    </section>
+
+  </Background>
+</DefaultLayout>

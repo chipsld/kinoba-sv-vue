@@ -1,7 +1,39 @@
-<div class="flex flex-col md:flex-row gap-5 p-6 md:pr-16 md:pl-5 md:py-10 bg-gray-900" data-aos="fade-up" data-aos-delay="{{ animationDelay }}">
-    <icon name="{{ icon }}" class="lg:mt-1" size="xl" filter="blue"></icon>
-    <div class="flex flex-col gap-3">
-        <h3 class="h3">{{ title|trans }}</h3>
-        <p class="text-gray-100">{{ content|trans|sanitize_html }}</p>
-    </div>
+---
+interface Props {
+  icon: string;
+  title: string;
+  description: string;
+  stacks?: { label?: string; items: string[] }[];
+}
+
+const { icon, title, description, stacks } = Astro.props;
+
+const iconMap: Record<string, string> = {
+  code: `<svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" /></svg>`,
+  click: `<svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 15l-2 5L9 9l11 4-5 2zm0 0l5 5" /></svg>`,
+  calendar: `<svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" /></svg>`,
+  cloud: `<svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 15a4 4 0 004 4h9a5 5 0 10-.1-9.999 5.002 5.002 0 10-9.78 2.096A4.001 4.001 0 003 15z" /></svg>`,
+};
+
+const svgIcon = iconMap[icon] || iconMap['code'];
+---
+
+<div class="flex flex-col md:flex-row gap-5 p-6 md:pr-16 md:pl-5 md:py-10 bg-gray-900 text-white rounded-xl">
+  <div class="text-blue-400 mt-1 shrink-0" set:html={svgIcon} />
+  <div class="flex flex-col gap-3">
+    <h3 class="h3 text-white">{title}</h3>
+    <p class="text-gray-300">{description}</p>
+    {stacks && stacks.length > 0 && (
+      <div class="flex flex-col gap-3 mt-2">
+        {stacks.map((stack) => (
+          <div class="flex flex-wrap gap-2">
+            {stack.label && <span class="text-xs text-gray-400 uppercase tracking-wide w-full">{stack.label}</span>}
+            {stack.items.map((item) => (
+              <span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-gray-700 text-gray-200">{item}</span>
+            ))}
+          </div>
+        ))}
+      </div>
+    )}
+  </div>
 </div>

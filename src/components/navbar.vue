@@ -17,27 +17,29 @@ type NavItem = {
 };
 
 const ITEMS: NavItem[] = [
-  { label: "Cas client", href: "/about" },
+  { label: "Cas clients", href: "/projects" },
   {
-    label: "Offres",
-    href: "#features",
+    label: "Offre",
+    href: "#offre",
     dropdownItems: [
       {
-        title: "Modern product teams",
-        href: "/#feature-modern-teams",
+        title: "Développement web sur mesure",
+        href: "/tailor-made",
         description:
-          "Mainline is built on the habits that make the best product teams successful",
+          "Création de plateformes web sur mesure : marketplace, e-commerce, application web.",
       },
       {
-        title: "Resource Allocation",
-        href: "/#resource-allocation",
-        description: "Mainline your resource allocation and execution",
+        title: "Renfort d'équipes techniques",
+        href: "/team-reinforcement",
+        description:
+          "Intégration d'experts web dans vos équipes de développement.",
       },
     ],
   },
-  { label: "Services", href: "/pricing" },
+  { label: "Services", href: "/services" },
   { label: "Tribu", href: "/tribe" },
-  { label: "Blog", href: "/blog" },
+  { label: "Offres d'emploi", href: "/join" },
+  { label: "Blog", href: "https://kinoba.medium.com" },
   { label: "Contact", href: "/contact" },
 ];
 

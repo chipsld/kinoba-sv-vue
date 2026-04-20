@@ -1,0 +1,161 @@
+---
+import DefaultLayout from '@/layouts/DefaultLayout.astro';
+import Background from '@/components/background.vue';
+---
+
+<DefaultLayout title="Développement web sur mesure | Kinoba" description="Concevons ta plateforme web sur mesure. Kinoba, agence web partenaire qui t'aide à innover.">
+  <Background className="via-muted to-muted/80">
+
+    <!-- Hero -->
+    <section class="relative pt-40 pb-16 lg:pt-52 lg:pb-24 overflow-hidden">
+      <div class="layout">
+        <h1 class="h1 mb-6">Développement web sur mesure</h1>
+        <p class="text-xl text-muted-foreground max-w-2xl">Concevons ta plateforme web sur mesure</p>
+      </div>
+    </section>
+
+    <!-- Intro -->
+    <section class="py-16 lg:py-24 bg-white">
+      <div class="layout grid lg:grid-cols-2 gap-12 lg:gap-20">
+        <div>
+          <h2 class="h2 mb-8">Ton agence web partenaire qui t'aide à innover</h2>
+          <div class="flex flex-col gap-4 text-gray-700">
+            <p>Tu as une <strong>idée de projet web sur mesure</strong> à créer et forte expertise technique pour garder ta plateforme web à la pointe de la technologie. Kinoba est là pour t'accompagner.</p>
+            <p>L'équipe Kinoba t'aide à <strong>structurer ton projet</strong>, à choisir les technologies les plus adaptées et à construire un produit web de qualité, dans les délais et le budget impartis.</p>
+            <p>En tant que concepteurs de sites web, nous avons accompagné des dizaines d'entrepreneurs et d'entreprises innovantes dans le <strong>lancement de leurs produits innovants.</strong></p>
+          </div>
+          <div class="flex flex-wrap gap-2 mt-8">
+            {['B2B', 'SaaS', 'Marketplace', 'E-commerce', 'Site vitrine', 'Application web'].map((badge) => (
+              <span class="inline-flex items-center px-3 py-1 rounded-full text-sm font-medium bg-gray-100 text-gray-800 border border-gray-200">
+                {badge}
+              </span>
+            ))}
+          </div>
+        </div>
+        <div class="flex flex-col gap-4 text-gray-700">
+          <p>Nous mettons à disposition une équipe pluridisciplinaire composée de <strong>développeurs web, chefs de projet et designers UX & UI</strong> pour t'accompagner de A à Z.</p>
+          <p>Notre processus éprouvé garantit une communication fluide, une livraison dans les temps et un produit qui répond à tes attentes.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Process -->
+    <section class="py-16 lg:py-24 bg-gray-50">
+      <div class="layout">
+        <div class="mb-12">
+          <h2 class="h2 mb-4">De ton idée à sa réalisation</h2>
+          <p class="text-gray-600 max-w-2xl">Une méthode flexible, testée et améliorée auprès de nos clients depuis 2017, pour garantir la qualité et le respect des délais.</p>
+        </div>
+
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mb-16">
+          {[
+            { num: '01', title: 'Kick-off', desc: 'La rencontre avec le maître d\'œuvre. On se pose, on échange sur tes besoins, tes contraintes et tes objectifs.' },
+            { num: '02', title: 'Cadrage technique', desc: 'Les plans de la maison. Nous définissons ensemble l\'architecture technique, les fonctionnalités et le périmètre du projet.' },
+            { num: '03', title: 'Design UX & UI', desc: 'La couche de peinture. Wireframes, maquettes graphiques et prototypes pour valider l\'expérience utilisateur avant de coder.' },
+            { num: '04', title: 'Développement web et serveurs', desc: 'La construction. Sprints de 2 semaines avec livraison régulière, tests automatisés et revue de code.' },
+            { num: '05', title: 'Mise en ligne', desc: 'L\'installation. Ton produit est mis en production dans les meilleures conditions, avec une infrastructure solide.' },
+            { num: '06', title: 'Maintenance et améliorations', desc: 'Le suivi du chantier. Monitoring, corrections de bugs, évolutions fonctionnelles et mises à jour de sécurité.' },
+          ].map((step) => (
+            <div class="p-6 bg-white border border-gray-200 rounded-xl flex flex-col gap-3">
+              <span class="text-4xl font-mono font-bold text-gray-200">{step.num}</span>
+              <h3 class="h3 text-black">{step.title}</h3>
+              <p class="text-gray-600 text-sm">{step.desc}</p>
+            </div>
+          ))}
+        </div>
+
+        <!-- Method stacks -->
+        <div class="bg-white border border-gray-200 rounded-xl p-6 lg:p-10">
+          <h3 class="h3 mb-6">Notre boîte à outils</h3>
+          <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {[
+              { label: 'Gestion de projet', items: ['Agile', 'Scrum', 'Trello', 'Slack', 'Sprints 2 semaines'] },
+              { label: 'Outils', items: ['Figma', 'GitHub', 'Jira', 'Notion', 'Kinobiz'] },
+              { label: 'Technologies', items: ['Ruby on Rails', 'Vue.js', 'React', 'Symfony', 'Node.js'] },
+              { label: 'Code source', items: ['Git', 'Code review', 'Tests automatisés', 'CI/CD'] },
+              { label: 'Serveurs', items: ['Docker', 'Kubernetes', 'Heroku', 'OVH', 'AWS'] },
+            ].map((group) => (
+              <div>
+                <p class="text-xs text-gray-500 uppercase tracking-wide mb-2 font-medium">{group.label}</p>
+                <div class="flex flex-wrap gap-2">
+                  {group.items.map((item) => (
+                    <span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs bg-gray-100 text-gray-700">{item}</span>
+                  ))}
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Quality -->
+    <section class="py-16 lg:py-24 bg-white">
+      <div class="layout">
+        <div class="mb-12">
+          <h2 class="h2 mb-4">Un engagement de qualité</h2>
+          <p class="text-gray-600">Pour une plateforme stable, qui dure dans le temps.</p>
+        </div>
+        <div class="grid md:grid-cols-3 gap-6">
+          {[
+            {
+              icon: '✅',
+              title: 'Validations techniques',
+              desc: 'Chaque ligne de code est testée et vérifiée par plusieurs développeurs avant livraison. Pull requests, code reviews et tests automatisés font partie de notre processus standard.',
+            },
+            {
+              icon: '🧪',
+              title: 'Tests automatiques',
+              desc: 'Pour garantir la qualité, nous rédigeons des tests automatisés (unitaires, d\'intégration, end-to-end) qui nous permettent de livrer en toute confiance.',
+            },
+            {
+              icon: '🔒',
+              title: 'Sécurité et RGPD',
+              desc: 'La sécurité des données, le stockage du code et l\'infrastructure serveurs est une priorité. Nous respectons les bonnes pratiques de sécurité et les obligations RGPD.',
+            },
+          ].map((item) => (
+            <div class="p-6 bg-gray-50 border border-gray-200 rounded-xl flex flex-col gap-3">
+              <span class="text-3xl">{item.icon}</span>
+              <h3 class="h3">{item.title}</h3>
+              <p class="text-gray-600 text-sm">{item.desc}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- Sectors -->
+    <section class="py-16 lg:py-24 bg-gray-50">
+      <div class="layout">
+        <div class="mb-8">
+          <h2 class="h2 mb-4">Une offre qui a fait ses preuves</h2>
+          <p class="text-gray-600 max-w-2xl">Depuis 2017 et avec plus de 65 produits web sur mesure à notre actif, nous avons développé une expertise solide dans de nombreux secteurs d'activité.</p>
+        </div>
+        <div class="flex flex-wrap gap-2 mb-12">
+          {['Voyage & Tourisme', 'Luxe', 'Santé', 'Industrie', 'Immobilier', 'Énergie', 'Droit', 'Entrepreneuriat'].map((sector) => (
+            <span class="inline-flex items-center px-3 py-1.5 rounded-full text-sm font-medium bg-black text-white">
+              {sector}
+            </span>
+          ))}
+        </div>
+        <a href="/contact" class="inline-flex items-center gap-2 bg-black text-white font-medium px-6 py-3 rounded-md hover:bg-black/80 transition-colors">
+          Parle-nous de ton projet
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+          </svg>
+        </a>
+      </div>
+    </section>
+
+    <!-- Pre-footer CTA -->
+    <section class="py-16 lg:py-24 bg-black text-white">
+      <div class="layout text-center">
+        <h2 class="h2 text-white mb-6">Une question par rapport à cette offre ?</h2>
+        <a href="/contact" class="inline-flex items-center gap-2 bg-white text-black font-medium px-6 py-3 rounded-md hover:bg-white/90 transition-colors">
+          Contacte nous
+        </a>
+      </div>
+    </section>
+
+  </Background>
+</DefaultLayout>

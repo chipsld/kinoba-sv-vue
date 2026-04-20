@@ -26,11 +26,6 @@
   .layout {
     @apply mx-auto w-main;
   }
-
-  .section-gray {
-    @apply bg-gray-900 py-16 lg:py-24 overflow-hidden relative;
-  }
-
   .cols-2 {
     @apply grid md:grid-cols-2 gap-y-12 gap-x-6 lg:gap-x-20;
   }

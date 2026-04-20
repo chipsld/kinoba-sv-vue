@@ -57,11 +57,11 @@
 }
 
 :root {
-    --background: oklch(1 0 0);
+  --background: var(--color-yellow-50);
     --foreground: oklch(0.145 0 0);
-    --card: oklch(1 0 0);
+  --card: var(--color-yellow-50);
     --card-foreground: oklch(0.145 0 0);
-    --popover: oklch(1 0 0);
+  --popover: var(--color-yellow-50);
     --popover-foreground: oklch(0.145 0 0);
     --primary: oklch(0.205 0 0);
     --primary-foreground: oklch(0.985 0 0);
@@ -96,11 +96,99 @@
     @apply border-border outline-ring/50;
     }
   body {
-    @apply bg-background text-foreground;
+    @apply bg-yellow-50 text-foreground;
     }
   html {
     @apply font-mono;
     }
+}
+
+@keyframes page-enter {
+  from {
+    opacity: 0;
+    transform: translateY(14px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes soft-float {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-2px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+.layout-surface {
+  position: relative;
+  margin-top: 0.625rem;
+  margin-left: 0.625rem;
+  margin-right: 0.625rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  border-top-left-radius: 2.6rem;
+  border-top-right-radius: 2.6rem;
+  border-bottom-left-radius: 1.8rem;
+  border-bottom-right-radius: 1.8rem;
+  background-color: var(--color-yellow-50);
+  background-image: linear-gradient(
+    to bottom,
+    color-mix(in oklab, var(--color-yellow-50) 50%, transparent),
+    var(--color-yellow-500) 20%,
+    color-mix(in oklab, var(--color-yellow-500) 80%, transparent)
+  );
+}
+
+@media (min-width: 48rem) {
+  .layout-surface {
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+  }
+}
+
+@media (min-width: 64rem) {
+  .layout-surface {
+    margin-left: 1rem;
+    margin-right: 1rem;
+    padding-left: 10%;
+    padding-right: 10%;
+  }
+}
+
+.page-shell > * {
+  animation: page-enter 0.55s ease-out both;
+}
+
+.page-shell section,
+.page-shell article,
+.page-shell .card,
+.page-shell [data-slot="card"] {
+  transition: transform 220ms ease, opacity 220ms ease;
+}
+
+.page-shell section:hover,
+.page-shell article:hover,
+.page-shell .card:hover,
+.page-shell [data-slot="card"]:hover {
+  animation: soft-float 0.5s ease;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .page-shell > *,
+  .page-shell section,
+  .page-shell article,
+  .page-shell .card,
+  .page-shell [data-slot="card"] {
+    animation: none !important;
+    transition: none !important;
+  }
 }
 
 @utility h1 {

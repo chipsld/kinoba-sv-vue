@@ -1,5 +1,4 @@
 <script setup lang="ts">
-import { GITHUB_URL } from "@/consts";
 import yellowCircleSquare from "../assets/images/background/yellow-circle-square.svg?url";
 import twoBlueTriangles from "../assets/images/background/two-blue-triangles.svg?url";
 import redCircleHalfCircle from "../assets/images/background/red-circle-half-circle.svg?url";
@@ -32,7 +31,7 @@ import redCircleHalfCircle from "../assets/images/background/red-circle-half-cir
 
         <div class="mt-8 flex flex-wrap items-center gap-4 lg:flex-nowrap">
           <a
-            :href="GITHUB_URL"
+            href="/contact"
             class="bg-primary text-primary-foreground hover:bg-primary/90 inline-flex h-12 items-center justify-center gap-2 whitespace-nowrap rounded-md px-6 py-3 text-base font-medium transition-all"
           >
             Parle nous de ton projet

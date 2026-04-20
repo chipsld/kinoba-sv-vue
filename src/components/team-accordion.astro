@@ -16,10 +16,10 @@ interface TeamMember {
 interface Props {
   member: TeamMember;
   accordionName: string;
-  t: (key: string, params?: Record<string, unknown>) => string;
+  t?: (key: string, params?: Record<string, unknown>) => string;
 }
 
-const { member, accordionName, t } = Astro.props;
+const { member, accordionName, t = (key: string) => key } = Astro.props;
 
 const images = import.meta.glob<{ default: ImageMetadata }>(
   '/src/assets/images/team/*.webp'
@@ -30,7 +30,7 @@ const resolvedImage = imageModule ? (await imageModule()).default : null;
 ---
 
 <div data-aos="zoom-in">
-  <details class="bg-white/70 border border-black/10 rounded-lg p-4" name={accordionName}>
+  <details class="bg-background/70 border border-black/10 rounded-lg p-4" name={accordionName}>
     <summary class="list-none cursor-pointer flex items-center justify-between gap-4">
       <div class="flex items-center gap-4">
         <div class="shrink-0 w-28 h-32 md:w-32 md:h-36">

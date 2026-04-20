@@ -1,0 +1,143 @@
+---
+import DefaultLayout from '@/layouts/DefaultLayout.astro';
+import Background from '@/components/background.vue';
+---
+
+<DefaultLayout title="Renfort d'équipes informatiques | Kinoba" description="Un soutien qui s'intègre aisément aux équipes informatiques. Kinoba renforce tes équipes de développement web.">
+  <Background className="via-muted to-muted/80">
+
+    <!-- Hero -->
+    <section class="relative pt-40 pb-16 lg:pt-52 lg:pb-24 overflow-hidden">
+      <div class="layout">
+        <h1 class="h1 mb-6">Renfort d'équipes informatiques</h1>
+        <p class="text-xl text-muted-foreground max-w-2xl">Un soutien qui s'intègre aisément aux équipes informatiques</p>
+      </div>
+    </section>
+
+    <!-- Intro -->
+    <section class="py-16 lg:py-24 bg-white">
+      <div class="layout grid lg:grid-cols-2 gap-12 lg:gap-20">
+        <div>
+          <h2 class="h2 mb-8">Ton agence web partenaire qui t'aide à innover</h2>
+          <div class="flex flex-col gap-4 text-gray-700">
+            <p>Tu rencontres une <strong>hausse d'activité</strong> et possèdes déjà ta propre équipe de développeurs ? Tu as besoin d'un <strong>soutien technique ponctuel ou sur le long terme</strong> ?</p>
+            <p>Kinoba met à disposition son expertise pour <strong>venir renforcer tes équipes</strong>. Nos développeurs s'intègrent directement dans ton environnement de travail, tes outils et ta méthodologie.</p>
+            <p>Nous travaillons en mode <strong>agile</strong>, en sprints de 2 semaines, avec une communication fluide et transparente pour s'adapter à tes besoins et contraintes.</p>
+            <p>Que ce soit pour un sprint ponctuel ou une mission longue durée, <strong>notre flexibilité est totale</strong>.</p>
+          </div>
+        </div>
+        <div>
+          <p class="text-gray-600 mb-6">Nos développeurs maîtrisent les technologies les plus utilisées par les équipes techniques :</p>
+          <div class="flex flex-col gap-4">
+            {[
+              { label: 'Frontend', items: ['React', 'Vue.js', 'Angular', 'Svelte', 'TypeScript'] },
+              { label: 'Backend', items: ['Ruby on Rails', 'Node.js', 'Symfony', 'Django', 'Laravel'] },
+              { label: 'DevOps', items: ['Docker', 'Kubernetes', 'Jenkins', 'CI/CD', 'GitHub Actions'] },
+            ].map((group) => (
+              <div>
+                <p class="text-xs text-gray-500 uppercase tracking-wide mb-2 font-medium">{group.label}</p>
+                <div class="flex flex-wrap gap-2">
+                  {group.items.map((item) => (
+                    <span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs bg-gray-100 text-gray-700">{item}</span>
+                  ))}
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Process -->
+    <section class="py-16 lg:py-24 bg-gray-50">
+      <div class="layout">
+        <div class="mb-12">
+          <h2 class="h2 mb-4">La méthode pour épauler tes équipes</h2>
+          <p class="text-gray-600 max-w-2xl">Une méthode flexible utilisée depuis 2017 pour s'intégrer rapidement et efficacement dans les équipes de nos clients.</p>
+        </div>
+
+        <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mb-16">
+          {[
+            { num: '01', title: 'Kick-off', desc: 'Première rencontre pour comprendre ton contexte, tes équipes, tes outils et tes objectifs.' },
+            { num: '02', title: 'Galop d\'essai', desc: 'Un sprint test pour valider la bonne intégration de nos développeurs dans ton équipe.' },
+            { num: '03', title: 'Sprints de développement', desc: 'Itérations de 2 semaines avec livraisons régulières, standup quotidien et revue de sprint.' },
+            { num: '04', title: 'Ajustements', desc: 'Adaptation continue de la mission selon les besoins et retours de ton équipe.' },
+          ].map((step) => (
+            <div class="p-6 bg-white border border-gray-200 rounded-xl flex flex-col gap-3">
+              <span class="text-4xl font-mono font-bold text-gray-200">{step.num}</span>
+              <h3 class="h3 text-black">{step.title}</h3>
+              <p class="text-gray-600 text-sm">{step.desc}</p>
+            </div>
+          ))}
+        </div>
+
+        <!-- Method stacks -->
+        <div class="bg-white border border-gray-200 rounded-xl p-6 lg:p-10">
+          <h3 class="h3 mb-6">Notre façon de travailler</h3>
+          <div class="grid md:grid-cols-3 gap-6">
+            {[
+              { label: 'Gestion de projet', items: ['Agile', 'Scrum', 'Kanban', 'Sprints 2 semaines'] },
+              { label: 'Outils', items: ['Slack', 'Trello', 'Jira', 'GitHub', 'GitLab'] },
+              { label: 'Compétences', items: ['Frontend', 'Backend', 'Fullstack', 'DevOps', 'Lead dev'] },
+            ].map((group) => (
+              <div>
+                <p class="text-xs text-gray-500 uppercase tracking-wide mb-2 font-medium">{group.label}</p>
+                <div class="flex flex-wrap gap-2">
+                  {group.items.map((item) => (
+                    <span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs bg-gray-100 text-gray-700">{item}</span>
+                  ))}
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Quality -->
+    <section class="py-16 lg:py-24 bg-white">
+      <div class="layout">
+        <div class="mb-12">
+          <h2 class="h2 mb-4">Un engagement de simplicité</h2>
+          <p class="text-gray-600">Pour une relation stable qui dure dans le temps.</p>
+        </div>
+        <div class="grid md:grid-cols-3 gap-6">
+          {[
+            {
+              icon: '⏱',
+              title: 'Gagner du temps',
+              desc: 'Notre lead développeur devient l\'interlocuteur dédié de ton équipe. Il connaît ton contexte et peut embarquer rapidement de nouveaux profils si nécessaire.',
+            },
+            {
+              icon: '🚚',
+              title: 'Délivrer en toute flexibilité',
+              desc: 'Nous savons nous adapter à tes contraintes techniques, organisationnelles et calendaires. La flexibilité est au cœur de notre approche.',
+            },
+            {
+              icon: '💰',
+              title: 'Contrôler ton budget',
+              desc: 'Nous mettons à disposition un outil de suivi des temps passés. Facturation en fin de mois selon le réel. Pas de mauvaises surprises.',
+            },
+          ].map((item) => (
+            <div class="p-6 bg-gray-50 border border-gray-200 rounded-xl flex flex-col gap-3">
+              <span class="text-3xl">{item.icon}</span>
+              <h3 class="h3">{item.title}</h3>
+              <p class="text-gray-600 text-sm">{item.desc}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="py-16 lg:py-24 bg-black text-white">
+      <div class="layout text-center">
+        <h2 class="h2 text-white mb-6">Une question par rapport à cette offre ?</h2>
+        <a href="/contact" class="inline-flex items-center gap-2 bg-white text-black font-medium px-6 py-3 rounded-md hover:bg-white/90 transition-colors">
+          Contacte nous
+        </a>
+      </div>
+    </section>
+
+  </Background>
+</DefaultLayout>
