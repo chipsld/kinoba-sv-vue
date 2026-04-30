@@ -6,6 +6,21 @@ import Background from '@/components/background.vue';
 import { Image } from 'astro:assets';
 import teamImage from '@/assets/images/team/team.jpg';
 
+let randomUser: Array<any> = [];
+const RANDOM_USERS_COUNT = 100;
+
+try {
+  const response = await fetch(`https://randomuser.me/api/?results=${RANDOM_USERS_COUNT}`);
+  if (response.ok) {
+    const data = await response.json();
+    randomUser = Array.isArray(data?.results) ? data.results : [];
+  }
+} catch {
+  randomUser = [];
+}
+
+const displayedRandomUsers = randomUser.slice(0, RANDOM_USERS_COUNT);
+
 const FORMER_MEMBERS = [
   {
     name: 'Jeanne',
@@ -58,7 +73,7 @@ const FORMER_MEMBERS = [
         </div>
       </div>
 
-      <div class="flex flex-col gap-8 opacity-80 text-white">
+      <div class="flex flex-col gap-8 opacity-80">
         <p>Historiquement, les ingénieurs et développeurs web à l'origine de l'agence ont été sollicités par plusieurs entrepreneurs pour créer leurs marketplaces, sites e-commerce et applications web métier. De simple agence Ruby on Rails à agence web pluridisciplinaire, nous travaillons depuis nos débuts avec des technologies de pointe adaptées à des clients faisant face à un marché en constante évolution.</p>
         <p>Nous avons dans notre ADN la création de produits web complexes qui traduisent directement le business model de nos clients. Pour maitriser ton produit, toutes nos créations sont faites en interne grâce à l'expertise de l'équipe : développement web, ux design, ui design, infrastructure serveurs, maintenance de serveurs, devOps, hébergement web et gestion de projet web.</p>
         <p>Notre leitmotiv : développer ensemble, pour créer des produits web innovants et de qualité.</p>
@@ -78,10 +93,10 @@ const FORMER_MEMBERS = [
 
       <!-- Join Section -->
       <div class="lg:col-span-2 flex items-center flex-wrap gap-4">
-        <p class="font-bold text-white">À ton tour de rejoindre l'équipe ?</p>
+        <p class="font-bold">À ton tour de rejoindre l'équipe ?</p>
         <a
           href="/join"
-          class="text-sm opacity-80 transition-arrow flex items-center gap-2 p-2 -ml-2 text-white hover:opacity-100"
+          class="text-sm opacity-80 transition-arrow flex items-center gap-2 p-2 -ml-2  hover:opacity-100"
         >
           Découvre les offres disponibles
           <svg
@@ -102,17 +117,39 @@ const FORMER_MEMBERS = [
 
       <!-- Former Members Section -->
       <div class="lg:col-span-2 overflow-hidden">
-        <h2 class="h2 text-white" data-aos="fade-up">
+        <h2 class="h2" data-aos="fade-up">
           Ils sont passés par ici, ils repasseront par là ?
         </h2>
       </div>
 
-      {FORMER_MEMBERS.map((member) => (
+      {displayedRandomUsers.length > 0 ? (
+        displayedRandomUsers.map((user: any) => (
+          <div class="p-4 border rounded">
+            <Image
+              src={user.picture?.medium}
+              alt={`Photo de ${user.name.first} ${user.name.last}`}
+              class="w-16 h-16 rounded-full object-cover mb-3"
+              width={64}
+              height={64}
+              format="jpeg"
+              loading="lazy"
+            />
+            <h3 class="font-bold">{user.name.first} {user.name.last}</h3>
+            <p>{user.email}</p>
+          </div>
+        ))
+      ) : (
+        <p class="lg:col-span-2 opacity-80">Aucun profil externe n’est disponible pour le moment.</p>
+      )}
+
+       {FORMER_MEMBERS.map((member) => (
         <TeamAccordion
           member={member}
           accordionName="former-member"
         />
       ))}
+
+
     </div>
   </section>
   </Background>
